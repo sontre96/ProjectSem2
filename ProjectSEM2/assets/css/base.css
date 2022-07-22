@@ -1,0 +1,22 @@
+/* CSS dùng chung */
+
+/* Đặt biến */
+:root{
+    --white-color: #ffffff;
+    --black-color: #000;
+    --primary-color: #0e5f50;
+   
+}
+
+/* nhúng các phần tử có sử dụng base.css */
+* {
+    box-sizing: inherit;
+}
+
+html{
+    /* 16px = 1rem && 62.5% => 10px = 1rem*/
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\ReactJS\\React-webpack"
+		},
+		{
+			"path": "..\\ReactJS\\React\\tiktok"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "React-webpack",
+		"git.ignoreLimitWarning": true
+	}
+}
