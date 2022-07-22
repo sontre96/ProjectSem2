@@ -1,0 +1,36 @@
+Tên: Phòng Khám Đa Khoa 
+
+1. Là Khách hàng tôi muốn đặt lịch phòng khám
+2. Là Khách hàng tôi muốn tra cứu kết quả xét nghiệm
+3. Là admin chúng tôi muốn quản lý số điện thoại khách hàng gửi để nhận thông khuyến mãi từ phòng khám.
+4. Là admin chúng tôi muốn quản lý danh sách khách hàng đặt lịch	
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Khách hàng:
+- post thông tin kH để đặt lịch:
+- Có thể chỉnh sửa/ hủy lịch trước lịch hẹn 1 ngày(24h)
+- Search thông tin bằng số điện thoại để kiểm tra thông tin lịch hẹn.
+
+	CREATE TABLE Customer (
+        CustomerId int not null PRIMARY KEY AUTO_INCREMENT,
+        CustomerName varchar(50),
+        CustomerAddress varchar(100),
+        PhoneCustomer varchar(10),
+        Specialty varchar(50),
+        createAt date,
+	  updateAt date,
+        Status boolean
+    )
+- Có thể cần gửi số điện thoại để nhận thông tin khuyến mãi từ phong khám.
+CREATE TABLE Phone (
+       id int not null PRIMARY KEY AUTO_INCREMENT,
+       Phone boolean,
+    ) => bảng riêng độc lập
+
+Admin Phòng khám:
+- Chúng tôi có thể có đầy đủ danh sách thông tin KH đặt lịch
+- Có thể chỉnh sửa/ hủy thông tin KH đặt lịch trước hẹn 1 ngày(24h)
+- Có thể search theo tên, số điện thoại, phòng khoa của khách hàng.
+- Sắp xếp theo tên KH, tên PK, ngày lịch hẹn.
+- Khi lịch khám đến hạn thì có thể auto chuyển trạng thái từ true -> false
+
+
