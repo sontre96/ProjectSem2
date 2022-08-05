@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng khám &nbsp;  Home-page</title>
+
+    <!-- link ResetCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/booking.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <!-- icon web -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- link icons -->
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1/css/all.min.css">
+    <!-- link font chữ -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <div class="header" id="navabar">
+            <div grid wide>
+                <nav class="header__navbar navbar">
+                    <a href="./index.html">
+                        <img src="./assets/img/logo.png" alt="" class="header__navbar-img">
+                    </a> 
+                    <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button> 
+                    <div id="navbar-menu" aria-labelledby="navbar-toggle">
+                        <ul class="header__navbar-list">  
+                            <li class="header__navbar-item">
+                                <a href="./index.html" class="header__navbar-item-link">Home</a>
+                            </li>
+                            <li class="header__navbar-item">
+                                <a href="#" class="header__navbar-item-link">Introduce</a>
+                            </li>
+                            <li class="header__navbar-item">
+                                <a href="#" class="header__navbar-item-link">Specialties</a>
+                            </li>
+                            <li class="header__navbar-item active1">
+                                <a href="./booking.html" class="header__navbar-item-link">Booking</a>
+                            </li>
+                            <li class="header__navbar-item">
+                                <a href="#" class="header__navbar-item-link">Contact</a>
+                            </li>
+                            <li class="header__navbar-item">
+                                <a href="#" class="header__navbar-item-link">Search</a>
+                            </li>
+                            <div class="header__navbar-line"></div>
+                        </ul>
+                    </div>
+                </nav>
+            </div>  
+        </div> 
+
+        <div class="app__container">
+           <div>
+                <div class="grid">
+                    <div class="row">
+                        <div class="col l-12 m-12 c-12">
+                            <nav class="navbar__content">
+                                <p>
+                                    <a href="./index.html" class="navbar__content-link">Home</a>
+                                    <span> &gt; </span>
+                                    <span class="navbar__content-last">Booking</span>
+                                </p>
+                            </nav>                                   
+                        </div>
+                    </div>
+                </div>
+                <div class="grid wide">
+                    <div class="row">
+                       
+                        <div class="col l-7 m-12 c-12">
+                            <h2 class="lined-heading">
+                                <span>MAKE AN APPOINTMENT</span>
+                            </h2>
+
+                            <form action="" method="POST" class="form" id="booking-form" onsubmit="return formvalidate();">
+                                <h3 class="heading">Appointment Booking form</h3>
+                                <p class="desc">Let's join hands for good health ❤️</p>
+                            
+                                <div class="spacer"></div>
+                            
+                                <div class="form-group">
+                                  <label for="fullname" class="form-label">Full name</label>
+                                  <input id="fullname" name="fullname" rules="required" type="text" placeholder="Entet your full name" class="form-control">
+                                  <span class="form-message"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input id="phone" name="phone" rules="required" type="text" placeholder="Entet your phone" class="form-control">
+                                    <span class="form-message"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input id="address" name="address" rules="required" type="text" placeholder="Entet your address" class="form-control">
+                                    <span class="form-message"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="specialty" class="form-label">Specialty</label>
+                                    <select name="specialty" id="specialty" rules="required" class="form-control">
+                                        <option value="select">Choose a Specialy</option>
+                                        <span class="form-message"></span>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="doctor" class="form-label">Doctor</label>
+                                    <select name="doctor" id="doctor" rules="required" class="form-control">
+                                        <option value="select">Choose a Doctor</option>
+                                        <span class="form-message"></span>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="date" class="form-label">Date</label>
+                                    <input id="date" name="date" rules="required" type="date" placeholder="Choose a date" class="form-control">
+                                    <span class="form-message"></span>
+                                </div>
+                                                        
+                                <button class="form-submit">Book an appointment</button>
+                            </form>
+                        </div>
+
+                        <div class="col l-5 m-12 c-12">
+                            <h2 class="lined-heading">
+                                <span>CONTACT US</span>
+                            </h2>
+
+                            <img src="./assets/img/address.jpg" alt="" class="booking-img">
+
+                            
+                            <div class="boooking-text">
+                                Community International Polyclini
+                            </div>
+
+                            <div class="boooking-text">
+                                18 Nguyen Huu Tho street, <br> Hoang Liet, Hoang Mai, Ha Noi 
+                            </div>
+                            <div class="boooking-text">
+                                Hotline: 19001909
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+           </div>
+                
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-3 m-6 c-12">
+                        <h3 class="footer__heading">Clinic information</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <span class="footer-item__text">Name: Community International Polyclinic </span>
+                            </li>
+                            <li class="footer-item">
+                                <span class="footer-item__text">Address: 18 Nguyen Huu Tho street, <br> Hoang Liet, Hoang Mai, Ha Noi </span>
+                            </li>
+                            <li class="footer-item">
+                                <span class="footer-item__text">Hotline: 19001909</a>
+                            </li>
+                            
+                            <li class="footer-item">
+                                <span class="footer-item__text">
+                                        Working time: <br>
+                                        Morming: 7h - 12h <br>
+                                        Afternoon: 13h30 - 18h
+                                </span>
+                            </li>
+                        </ul>  
+                    </div>
+
+                    <div class="col l-3 m-6 c-12">
+                        <h3 class="footer__heading">About Us</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Introduce</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Specialties</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Book</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Contact</a>
+                            </li>
+                        </ul>  
+                    </div>
+
+                    <div class="col l-3 m-6 c-12">
+                        <h3 class="footer__heading">Receive information</h3>
+                        <span class="footer-span__text">
+                            Sign up for the newsletter, to be able to update promotions from Clinic!
+                        </span>
+                        <form class="footer_btn" action="#" method="post">
+                            <input class="footer-btn__text" type="text" value="" placeholder="Enter your phone Number">
+                            <a href="#"><input class="footer-btn__input" type="button" value="Register"></a>
+                        </form>                       
+                        
+                    </div>
+
+                    <div class="col l-3 m-6 c-12">
+                        <h3 class="footer__heading">Policy</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Payments</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Support service information</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Privacy Policy</a>
+                            </li>
+                        </ul>  
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="grid wide">
+                    <p class="footer__text">© 2022 - Copyright of Team1 Project</p>
+                </div>
+            </div>
+        </footer>
+    </div> 
+
+    <script src="./js/validateform.js"></script>
+    <script src="./js/index.js"></script>
+
+ 
+</body>
+</html>

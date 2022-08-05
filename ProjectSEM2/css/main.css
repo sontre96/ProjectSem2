@@ -232,34 +232,6 @@
     background-color: var(--primary-color);
 }
 
-.lined-heading {
-    position: relative;
-    margin: 40px 0;
-    text-align: center;
-    display: block;
-}
-
- h2.lined-heading:before {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    display: block;
-    width: 100%;
-    height: 1px;
-    border-top: 2px solid #ccc;
-    content: "";
-}
-
-h2.lined-heading span {
-    position: relative;
-    z-index: 1;
-    line-height: 40px;
-    padding: 0 20px;
-    font-size: 2.8rem;
-    background: var(--white-color);
-    display: inline-block;
-    color: var(--primary-color);
-}
 
 /* doctor */
 .doctor__container {
@@ -275,7 +247,7 @@ h2.lined-heading span {
 
 .doctor__container-text {
     color: var(--primary-color);
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     text-align: center;
     padding: 16px 0;
 }

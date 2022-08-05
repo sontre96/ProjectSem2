@@ -36,7 +36,6 @@
         margin: 16px 0;
     }
     .mt-heading-text {
-        font-size: 3.2em;
         line-height: 48px;
         text-align: center;
         color: var(--primary-color);
@@ -60,8 +59,12 @@
 
     .header__navbar-line {
         display: none;
+    }    
+
+    /* navbar content */
+    .navbar__content {
+        padding-left: 14px;
     }
-    
     
 }
 
@@ -84,10 +87,20 @@
         width: 60px;
         height: 60px;
     }
+
+    .mt-heading-text {
+        font-size: 4.8em;    
+    }
+
+    
 }
 
 /* mobile */
 @media screen and (max-width: 39.9375em) {
+
+    .mt-heading-text {
+        font-size: 3.2em;    
+    }
 
     .footer__heading {
        padding-left: 24px;

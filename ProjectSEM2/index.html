@@ -8,10 +8,10 @@
 
     <!-- link ResetCSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/responsive.css">
     <!-- icon web -->
     <link rel="icon" href="" type="image/x-icon">
     <!-- link icons -->
@@ -36,7 +36,7 @@
                     <div id="navbar-menu" aria-labelledby="navbar-toggle">
                         <ul class="header__navbar-list">  
                             <li class="header__navbar-item active1">
-                                <a href="#" class="header__navbar-item-link">Home</a>
+                                <a href="./index.html" class="header__navbar-item-link">Home</a>
                             </li>
                             <li class="header__navbar-item">
                                 <a href="#" class="header__navbar-item-link">Introduce</a>
@@ -45,14 +45,15 @@
                                 <a href="#" class="header__navbar-item-link">Specialties</a>
                             </li>
                             <li class="header__navbar-item">
-                                <a href="#" class="header__navbar-item-link">Book</a>
-                            </li>
-                            <li class="header__navbar-item">
-                                <a href="#" class="header__navbar-item-link">Contact</a>
+                                <a href="./booking.html" class="header__navbar-item-link">Booking</a>
                             </li>
                             <li class="header__navbar-item">
                                 <a href="#" class="header__navbar-item-link">Search</a>
                             </li>
+                            <li class="header__navbar-item">
+                                <a href="#" class="header__navbar-item-link">Contact</a>
+                            </li>
+                          
                             <div class="header__navbar-line"></div>
                         </ul>
                     </div>
@@ -64,13 +65,19 @@
             <div class="slide">
                 <div class="slide-show slide-fade">
                     <img src="./assets/img/slide1.png" class="slide-img" alt="">
-                    <div class="silde-text">Welcome to Thao Do Clinic </div>
+                    <div class="silde-text">Welcome to Community International Polyclinic </div>
                     <div class="slogan">Because we care about you</div>                    
                 </div>
     
                 <div class="slide-show slide-fade">
                     <img src="./assets/img/slide2.png" class="slide-img" alt="">
-                    <div class="silde-text">Welcome to Thao Do Clinic </div>
+                    <div class="silde-text">Welcome to Community International Polyclinic </div>
+                    <div class="slogan">Because we care about you</div>                    
+                </div>
+
+                <div class="slide-show slide-fade">
+                    <img src="./assets/img/slide3.jpg" class="slide-img" alt="">
+                    <div class="silde-text">Welcome to Community International Polyclinic </div>
                     <div class="slogan">Because we care about you</div>                    
                 </div>
                 <a class="slide-icon prev" onclick="plusSlides(-1)">
@@ -83,25 +90,30 @@
                 <div style="text-align: center;">
                     <span class="slide__line" onclick="currentSlide(1)"></span>
                     <span class="slide__line" onclick="currentSlide(2)"></span>
+                    <span class="slide__line" onclick="currentSlide(3)"></span>
                 </div>
             </div>
                      
             <div class="grid wide">
                 <div class="row">
                     <div class="col l-12 m-12 c-12 mt-heading">
-                        <h1 class="mt-heading-text">WELCOME TO THAO DO CLINIC</h1>
+                        <h1 class="mt-heading-text">WELCOME TO Community International Polyclinic</h1>
                     </div>
+                </div>
+
+                <div class="row">
                     <div class="col l-12 m-12 c-12">
                         <h2 class="lined-heading">
-                            <span>CHUYEN GIA DAU NGANH</span>
+                            <span>Industry experts</span>
                         </h2>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col l-4 m-4 c-12">
                         <div class="doctor_container">
-                            <img src="./assets/img/Chuyegiadaunganh1.jpg" alt="" class="doctor__container-img">
-                            <div class="doctor__container-text">Name of doctor</div>
+                            <img src="./assets/img/doctor/NguyenVietTien.png" alt="" class="doctor__container-img">
+                            <div class="doctor__container-text">Doctor Nguyen Viet Tien</div>
                             <a href="./index.html" class="doctor__container-link">
                                 <button type="submit" class="doctor__container-btn">View details</button>
                             </a>
@@ -110,8 +122,8 @@
 
                     <div class="col l-4 m-4 c-12">
                         <div class="doctor_container">
-                            <img src="./assets/img/Chuyegiadaunganh1.jpg" alt="" class="doctor__container-img">
-                            <div class="doctor__container-text">Name of doctor</div>
+                            <img src="./assets/img/doctor/bshuynhngoclong.png" alt="" class="doctor__container-img">
+                            <div class="doctor__container-text">Doctor Huynh Ngoc Long</div>
                             <a href="./index.html" class="doctor__container-link">
                                 <button type="submit" class="doctor__container-btn">View details</button>
                             </a>
@@ -120,8 +132,8 @@
 
                     <div class="col l-4 m-4 c-12">
                         <div class="doctor_container">
-                            <img src="./assets/img/Chuyegiadaunganh1.jpg" alt="" class="doctor__container-img">
-                            <div class="doctor__container-text">Name of doctor</div>
+                            <img src="./assets/img/doctor/MacLanHuong.png" alt="" class="doctor__container-img">
+                            <div class="doctor__container-text">Doctor Mac Lan Huong</div>
                             <a href="./index.html" class="doctor__container-link">
                                 <button type="submit" class="doctor__container-btn">View details</button>
                             </a>
@@ -132,36 +144,46 @@
                 <div class="row">            
                     <div class="col l-12 m-12 c-12">
                         <h2 class="lined-heading">
-                            <span>CAC CHUYEN KHOA</span>
+                            <span>Specializations</span>
                         </h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col l-4 m-4 c-12">
+                    <div class="col l-3 m-3 c-12">
                         <div class="dept_container">
-                            <img src="./assets/img/Chuyegiadaunganh1.jpg" alt="" class="dept__container-img">
-                            <div class="dept__container-text">Name of CHUYEN khoa</div>
-                            <a href="./index.html" class="dept__container-link">
+                            <img src="./assets/img/dept/khoachanthuongchinhhinh.png" alt="" class="dept__container-img">
+                            <div class="dept__container-text">Orthopedic Department</div>
+                            <a href="#" class="dept__container-link">
                                 <button type="submit" class="dept__container-btn">View details</button>
                             </a>
                         </div>
                     </div>  
 
-                    <div class="col l-4 m-4 c-12">
+                    <div class="col l-3 m-3 c-12">
                         <div class="dept_container">
-                            <img src="./assets/img/Chuyegiadaunganh1.jpg" alt="" class="dept__container-img">
-                            <div class="dept__container-text">Name of CHUYEN khoa</div>
-                            <a href="./index.html" class="dept__container-link">
+                            <img src="./assets/img/dept/khoatimmach.png  " alt="" class="dept__container-img">
+                            <div class="dept__container-text">Cardiologyoa</div>
+                            <a href="#" class="dept__container-link">
                                 <button type="submit" class="dept__container-btn">View details</button>
                             </a>
                         </div>
                     </div>  
 
-                    <div class="col l-4 m-4 c-12">
+                    <div class="col l-3 m-3 c-12">
                         <div class="dept_container">
-                            <img src="./assets/img/Chuyegiadaunganh1.jpg" alt="" class="dept__container-img">
-                            <div class="dept__container-text">Name of CHUYEN khoa</div>
-                            <a href="./index.html" class="dept__container-link">
+                            <img src="./assets/img/dept/trungtamxetnghiem.png" alt="" class="dept__container-img">
+                            <div class="dept__container-text">Testing Center</div>
+                            <a href="#" class="dept__container-link">
+                                <button type="submit" class="dept__container-btn">View details</button>
+                            </a>
+                        </div>
+                    </div>  
+
+                    <div class="col l-3 m-3 c-12">
+                        <div class="dept_container">
+                            <img src="./assets/img/dept/khoanhi.png" alt="" class="dept__container-img">
+                            <div class="dept__container-text">Pediatrics Department</div>
+                            <a href="#" class="dept__container-link">
                                 <button type="submit" class="dept__container-btn">View details</button>
                             </a>
                         </div>
@@ -178,33 +200,35 @@
                 <div class="row box-service">
                     <div class="col l-3 m-3 c-12">
                         <div class="box-icon">
-                            <img src="./assets/img/service1.webp" class="box-img">
-                            <h3>Dat lich</h3>
-                            <p>Dat kham qua website hoac hotline</p>
+                            <img src="./assets/img/service/service1.webp" class="box-img">
+                            <h3>Booking</h3>
+                            <p>Book through the website <br> or hotline: 19001909.</p>
                         </div>
                     </div>
 
                     <div class="col l-3 m-3 c-12">
                         <div class="box-icon">
-                            <img src="./assets/img/service2.webp" class="box-img">
-                            <h3>Dat lich</h3>
-                            <p>Dat kham qua website hoac hotline</p>
+                            <img src="./assets/img/service/service2.webp" class="box-img">
+                            <h3>Welcome</h3>
+                            <p>Receptionist check information
+                                you have registered, print the examination card &
+                                examination instructions.</p>
                         </div>
                     </div>
 
                     <div class="col l-3 m-3 c-12">
                         <div class="box-icon">
-                            <img src="./assets/img/service3.webp" class="box-img">
-                            <h3>Dat lich</h3>
-                            <p>Dat kham qua website hoac hotline</p>
+                            <img src="./assets/img/service/service3.webp" class="box-img">
+                            <h3>Medical examination</h3>
+                            <p>You will be examined by leading doctors.</p>
                         </div>
                     </div>
 
                     <div class="col l-3 m-3 c-12">
                         <div class="box-icon">
-                            <img src="./assets/img/service4.webp" class="box-img">
-                            <h3>Dat lich</h3>
-                            <p>Dat kham qua website hoac hotline</p>
+                            <img src="./assets/img/service/service4.webp" class="box-img">
+                            <h3>Post-examination care</h3>
+                            <p>Customer care staff will call to visit, remind the appointment, receive feedback after examination.</p>
                         </div>
                     </div>
                 </div>
@@ -214,12 +238,12 @@
                 <div class="grid wide">
                     <div class="row">
                         <div class="col l-10 m-10 c-12">
-                            <h2 class="call-to-text"> Hay dat lich va su dung dich vu cua chung toi</h2>
-                            <h2 class="call-to-text"> Hotline: 19006057</h2>
+                            <h2 class="call-to-text"> Make an appointment and use our service</h2>
+                            <h2 class="call-to-text"> Hotline: 19001909</h2>
                         </div>
                         <div class="col l-2 m-2 c-12 call-action">
-                            <a href="#" class="call-action-link">
-                                <button class="call-action-btn">Dat lich</button>
+                            <a href="/booking.html" class="call-action-link">
+                                <button class="call-action-btn">Booking</button>
                             </a>
                         </div>
                     </div>
@@ -235,14 +259,15 @@
                         <h3 class="footer__heading">Clinic information</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
-                                <span class="footer-item__text">Address: </span>
+                                <span class="footer-item__text">Name: Community International Polyclinic </span>
                             </li>
                             <li class="footer-item">
-                                <span class="footer-item__text">Hotline: </a>
+                                <span class="footer-item__text">Address: 18 Nguyen Huu Tho street, <br> Hoang Liet, Hoang Mai, Ha Noi </span>
                             </li>
                             <li class="footer-item">
-                                <span class="footer-item__text">Website: </a>
+                                <span class="footer-item__text">Hotline: 19001909</a>
                             </li>
+                            
                             <li class="footer-item">
                                 <span class="footer-item__text">
                                         Working time: <br>
@@ -263,7 +288,7 @@
                                 <a href="" class="footer-item__link">Specialties</a>
                             </li>
                             <li class="footer-item">
-                                <a href="" class="footer-item__link">Book</a>
+                                <a href="./booking.html" class="footer-item__link">Book</a>
                             </li>
                             <li class="footer-item">
                                 <a href="" class="footer-item__link">Contact</a>
@@ -308,6 +333,6 @@
         </footer>
     </div> 
 
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

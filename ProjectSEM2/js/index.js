@@ -47,10 +47,10 @@ function showSlides(n) {
         slides[i].style.display = 'none';
     }
     for (i = 0; i < lines.length; i++) {
-        lines[i].className = lines[i].className.replace(' active1', "");
+        lines[i].className = lines[i].className.replace(' active', "");
     }
     slides[slideIndex-1].style.display = "block";
-    lines[slideIndex-1].className += " active1";
+    lines[slideIndex-1].className += " active";
     activeTimer = window.setTimeout(plusSlides, 4000);
 };
 
@@ -69,3 +69,8 @@ navbarToggle.addEventListener("click", toggleNavbarVisibility);
 
 navbarLinksContainer.addEventListener("click", (e) => e.stopPropagation());
 navbarMenu.addEventListener("click", toggleNavbarVisibility);
+
+
+
+
+// Validate form

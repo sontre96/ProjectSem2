@@ -1,0 +1,52 @@
+/* CSS dùng chung */
+
+/* Đặt biến */
+:root{
+    --white-color: #ffffff;
+    --black-color: #000;
+    --primary-color: #0e5f50;
+   
+}
+
+/* nhúng các phần tử có sử dụng base.css */
+* {
+    box-sizing: inherit;
+}
+
+html{
+    /* 16px = 1rem && 62.5% => 10px = 1rem*/
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+
+h2.lined-heading span {
+    position: relative;
+    z-index: 1;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 2.8rem;
+    background: var(--white-color);
+    display: inline-block;
+    color: var(--primary-color);
+}
+
+.lined-heading {
+    position: relative;
+    margin: 40px 0;
+    text-align: center;
+    display: block;
+}
+
+ h2.lined-heading:before {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-top: 2px solid #ccc;
+    content: "";
+}
