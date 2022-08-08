@@ -2,7 +2,7 @@
 .navbar__content {
     max-width: 1200px;
     margin: auto;
-    padding-left: 32px;
+    padding-left: 40px;
     line-height: 40px;
     font-size: 20px;
 }
@@ -16,15 +16,11 @@
     color: var(--primary-color);
 }
 
- /*form  */
-
- .lined-heading--booking {
-    position: relative;
-    margin: 20px 0 0;
-    text-align: center;
-    display: block;
+.lined-heading {
+  margin: 0 0 40px 0;
 }
 
+ /*form  */
   .form {
     width: 100%;
     min-height: 100px;
@@ -35,6 +31,7 @@
     border-radius: 2px;
     margin: 24px;
     align-self: center;
+    margin-top: -30px;
   }
   .form .heading {
     font-size: 2rem;
@@ -125,3 +122,5 @@
   font-size: 1.4rem;
   padding: 8px 0;;
 }
+
+

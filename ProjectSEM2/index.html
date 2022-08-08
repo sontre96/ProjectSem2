@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phòng khám &nbsp;  Home-page</title>
+    <title>Clinic &nbsp;  Home-page</title>
 
     <!-- link ResetCSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -22,7 +22,7 @@
 <body>
     <div class="app">
         <!-- Header -->
-        <div class="header" id="navabar">
+        <div class="header" id="navbar">
             <div grid wide>
                 <nav class="header__navbar navbar">
                     <a href="./index.html">
@@ -32,7 +32,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                      </button> 
+                    </button> 
                     <div id="navbar-menu" aria-labelledby="navbar-toggle">
                         <ul class="header__navbar-list">  
                             <li class="header__navbar-item active1">
@@ -48,12 +48,12 @@
                                 <a href="./booking.html" class="header__navbar-item-link">Booking</a>
                             </li>
                             <li class="header__navbar-item">
-                                <a href="#" class="header__navbar-item-link">Search</a>
-                            </li>
-                            <li class="header__navbar-item">
                                 <a href="#" class="header__navbar-item-link">Contact</a>
                             </li>
-                          
+                            <li class="header__navbar-item">
+                                <a href="#" class="header__navbar-item-link">Search</a>
+                            </li>
+                                                     
                             <div class="header__navbar-line"></div>
                         </ul>
                     </div>
@@ -65,19 +65,19 @@
             <div class="slide">
                 <div class="slide-show slide-fade">
                     <img src="./assets/img/slide1.png" class="slide-img" alt="">
-                    <div class="silde-text">Welcome to Community International Polyclinic </div>
+                    <div class="silde-text">Welcome to Thao Do Clinic</div>
                     <div class="slogan">Because we care about you</div>                    
                 </div>
     
                 <div class="slide-show slide-fade">
                     <img src="./assets/img/slide2.png" class="slide-img" alt="">
-                    <div class="silde-text">Welcome to Community International Polyclinic </div>
+                    <div class="silde-text">Welcome to Thao Do Clinic </div>
                     <div class="slogan">Because we care about you</div>                    
                 </div>
 
                 <div class="slide-show slide-fade">
                     <img src="./assets/img/slide3.jpg" class="slide-img" alt="">
-                    <div class="silde-text">Welcome to Community International Polyclinic </div>
+                    <div class="silde-text">Welcome to Thao Do Clinic </div>
                     <div class="slogan">Because we care about you</div>                    
                 </div>
                 <a class="slide-icon prev" onclick="plusSlides(-1)">
@@ -97,7 +97,7 @@
             <div class="grid wide">
                 <div class="row">
                     <div class="col l-12 m-12 c-12 mt-heading">
-                        <h1 class="mt-heading-text">WELCOME TO Community International Polyclinic</h1>
+                        <h1 class="mt-heading-text">WELCOME TO THAO DO CLINIC</h1>
                     </div>
                 </div>
 
@@ -255,30 +255,35 @@
         <footer class="footer">
             <div class="grid wide footer__content">
                 <div class="row">
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-2 c-12">
                         <h3 class="footer__heading">Clinic information</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
-                                <span class="footer-item__text">Name: Community International Polyclinic </span>
-                            </li>
-                            <li class="footer-item">
-                                <span class="footer-item__text">Address: 18 Nguyen Huu Tho street, <br> Hoang Liet, Hoang Mai, Ha Noi </span>
-                            </li>
-                            <li class="footer-item">
-                                <span class="footer-item__text">Hotline: 19001909</a>
-                            </li>
-                            
+                                <span class="footer-item__text">
+                                    Name: Thao Do Clinic <br><br>
+                                    Address: 18 Nguyen Huu Tho street, <br> Hoang Liet, Hoang Mai, Ha Noi <br><br>
+                                    Hotline: 19001909 <br><br>
+                                    Phone: 024.38618257
+                                </span>
+                            </li>                                                                     
+                        </ul>  
+                    </div>
+
+
+                    <div class="col l-3 m-2 c-12">
+                        <h3 class="footer__heading">Time work</h3>
+                        <ul class="footer-list">
                             <li class="footer-item">
                                 <span class="footer-item__text">
-                                        Working time: <br>
-                                        Morming: 7h - 12h <br>
+                                        Working time: <br><br>
+                                        Morming: 7h - 12h <br><br>
                                         Afternoon: 13h30 - 18h
                                 </span>
                             </li>
                         </ul>  
                     </div>
 
-                    <div class="col l-3 m-6 c-12">
+                    <div class="col l-3 m-2 c-12">
                         <h3 class="footer__heading">About Us</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -295,20 +300,8 @@
                             </li>
                         </ul>  
                     </div>
-
-                    <div class="col l-3 m-6 c-12">
-                        <h3 class="footer__heading">Receive information</h3>
-                        <span class="footer-span__text">
-                            Sign up for the newsletter, to be able to update promotions from Clinic!
-                        </span>
-                        <form class="footer_btn" action="#" method="post">
-                            <input class="footer-btn__text" type="text" value="" placeholder="Enter your phone Number">
-                            <a href="#"><input class="footer-btn__input" type="button" value="Register"></a>
-                        </form>                       
-                        
-                    </div>
-
-                    <div class="col l-3 m-6 c-12">
+                
+                    <div class="col l-3 m-2 c-12">
                         <h3 class="footer__heading">Policy</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
