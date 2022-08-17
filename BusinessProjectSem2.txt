@@ -8,18 +8,16 @@ Tên: Phòng Khám Đa Khoa
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Khách hàng:
-- post thông tin kH để đặt lịch:
-- Search thông tin Có thể chỉnh sửa/ hủy lịch trước lịch hẹn 1 ngày(24h)
-ng tin bằng số điện thoại để kiểm tra thông tin lịch hẹn.
-
-- Có thể cần gửi email để nhận thông tin khuyến mãi từ phong khám.
+- post thông tin đặt lịch:
+- Khi khách hàng muốn thay đổi lịch khám phải thông qua hotline phòng khám
+- Sẽ nhận được thông tin khi sắp đến ngày khám 
+- Có thể gửi phản hồi or nhờ tư vấn tới phòng khám.
 
 Admin Phòng khám:
 - Chúng tôi có thể có đầy đủ danh sách thông tin KH đặt lịch
 - Có thể chỉnh sửa/ hủy thông tin KH đặt lịch trước hẹn 1 ngày(24h)
-- Có thể search theo tên, số điện thoại, phòng khoa, của khách hàng.
-- Sắp xếp theo tên KH, tên PK, ngày lịch hẹn.
+- Có thể search thông tin của bác sĩ, phòng khoa, khách hàng.
 - Kiểm soát thông tin của bác sĩ.
-- Quản lý lịch khám của bác sĩ
+- Quản lý lịch khám của bác sĩ.
 
 

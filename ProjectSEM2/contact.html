@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinic &nbsp;  Booking-page</title>
+    <title>Clinic &nbsp;  Contact-page</title>
 
     <!-- link ResetCSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/grid.css">
-    <link rel="stylesheet" href="./css/booking.css">
+    <link rel="stylesheet" href="./css/contact.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <!-- icon web -->
     <link rel="icon" href="" type="image/x-icon">
@@ -33,7 +33,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button> 
+                      </button> 
                     <div id="navbar-menu" aria-labelledby="navbar-toggle">
                         <ul class="header__navbar-list">  
                             <li class="header__navbar-item">
@@ -45,10 +45,10 @@
                             <li class="header__navbar-item">
                                 <a href="#" class="header__navbar-item-link">Specialties</a>
                             </li>
-                            <li class="header__navbar-item active1">
+                            <li class="header__navbar-item">
                                 <a href="./booking.html" class="header__navbar-item-link">Booking</a>
                             </li>
-                            <li class="header__navbar-item">
+                            <li class="header__navbar-item active1">
                                 <a href="./contact.html" class="header__navbar-item-link">Contact</a>
                             </li>
                           
@@ -68,7 +68,7 @@
                                 <p>
                                     <a href="./index.html" class="navbar__content-link">Home</a>
                                     <span> &gt; </span>
-                                    <span class="navbar__content-last">Booking</span>
+                                    <span class="navbar__content-last">Contact</span>
                                 </p>
                             </nav>                                   
                         </div>
@@ -76,89 +76,83 @@
                 </div>
                 <div class="grid wide">
                     <div class="row">
-                        <div class="col l-12 c-12 m-12">
+                        <div class="col l-7 c-12 m-12">
                             <h2 class="lined-heading">
-                                <span>MAKE AN APPOINTMENT</span>
+                                <span>CONTACT US</span>
                             </h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col l-3 m-12 c-12"></div>                       
-                        <div class="col l-6 m-12 c-12">                            
-                            <form action="" method="POST" class="form" id="booking-form">
-                                <h3 class="heading">Appointment Booking form</h3>
-                                <p class="desc">Let's join hands for good health ❤️</p>
+
+                            <form action="#" method="POST" class="form" id="booking-form">
+                                <h3 class="heading">If you need our help, feel free to contact us❤️</h3>
                                 <div class="spacer"></div>
                                 <div class="form-group">
-                                  <label for="name" class="form-label">Full name: </label>
-                                  <input id="name" name="fullname" type="text" placeholder="Entet your full name" class="form-control"> 
+                                <label for="name" class="form-label">Full name: </label>
+                                <input id="name" name="fullname" type="text" placeholder="Entet your full name" class="form-control"> 
                                 </div>
-                                <div class="form-group">
-                                    <label for="birthday" class="form-label">Birthday:</label>
-                                    <input id="birthday" name="birthday" rules="required" type="date" placeholder="Entet your birthday" class="form-control">       
-                                </div>
+                            
                                 <div class="form-group">
                                     <label for="phone" class="form-label">Phone: </label>
-                                    <input id="phone" name="phone" size="10" rules="required" type="text" placeholder="Entet your phone" class="form-control">                        
+                                    <input id="phone" name="phone" size="10" type="text" placeholder="Entet your phone" class="form-control">                        
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="form-label">Email:</label>
                                     <input id="email" name="email" type="email" placeholder="Entet your email" class="form-control">
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="address" class="form-label">Address:</label>
-                                    <input id="address" name="address" type="text" placeholder="Entet your address" class="form-control">       
-                                </div>
-                                <div class="form-group">
-                                    <label for="specialty" class="form-label">Specialty</label>
-                                    <select name="specialty" id="specialty" class="form-control">
-                                        <option value="select">Choose a Specialy</option>
-                                    </select>
-                                </div>      
-                                <div class="form-group">
-                                    <label for="time" class="form-label">Choose a time for medical examination</label>
-                                    <select name="time" id="time" class="form-control">
-                                        <option value="select">Time: Morning: 8h - 9h30 </option>
-                                        <option value="select">Time: Morning: 10h - 11h30 </option>
-                                        <option value="select">Time: Afternoon: 14h - 15h30 </option>
-                                        <option value="select">Time: Afternoon: 16h - 17h30 </option>
-                                    </select>
-                                </div>                         
-                                <div class="form-group">
-                                    <label for="date" class="form-label">Date</label>
-                                    <input id="date" name="date" type="date" class="form-control">
-                                <button class="form-submit">Book an appointment</button>
+                                    <label for="note" class="form-label">Note:</label>
+                                    <textarea name="note" id="note" cols="30" rows="20"></textarea>
+                                </div>                
+                                <button class="form-submit">Send</button>
                             </form>
-                        </div>
+                        </div>          
+                        
+                        <div class="col l-5 c-12 m-12">
+                            <h2 class="lined-heading">
+                                <span>ADDRESS</span>
+                            </h2>
 
-                        <div class="col l-3 m-12 c-12"> </div>        
-                    </div>
-                </div>
-            </div>
-        </div>
+                            <img src="./assets/img/address.jpg" alt="Address clinic" class="contact__address">
 
-        <br><br>
-        <div class="grid wide">
-            <div class="row">
-                <div class="col l-12 c-12 m-12">
-                    <h2 class="lined-heading">
-                        <span>Contact Us</span>
-                    </h2>
+                            <div class="contact__address-text">
+                                <span>Doctor care Polyclinic </span>                               
+                            </div>
+                            <div class="contact__address-text">
+                                <span>Doctor care Polyclinic </span>                               
+                            </div>
+                            <div class="contact__address-text">
+                                <span>Doctor care Polyclinic </span>                               
+                            </div>
+
+
+                            <div class="contact__address-googlemap">
+                               <img src="" alt="googleapis">
+                            </div>
+                        </div>     
+                    </div>  
+                    
+                    
                 </div>
-            </div>
-        </div>
-        <div class="booking-image">
-            <div class="grid wide">
-                <div class="row">
-                    <div class="col l-12 m-12 c-12">
-                        <h2 class="booking-text">Doctor Care Clinic</h2>
-                        <h2 class="booking-text">18 Nguyen Huu Tho street, Hoang Liet, Hoang Mai, Ha Noi</h2>
-                        <h2 class="booking-text"> Hotline: 19001909</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
+
                 
+            </div>
+            <div class="call-to-action">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-10 m-10 c-12">
+                            <h2 class="call-to-text"> Make an appointment and use our service</h2>
+                            <h2 class="call-to-text"> Hotline: 19001909</h2>
+                        </div>
+                        <div class="col l-2 m-2 c-12 call-action">
+                            <a href="/booking.html" class="call-action-link">
+                                <button class="call-action-btn">Booking</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                       
         <!-- Footer -->
         <footer class="footer">
             <div class="grid wide footer__content">
@@ -224,6 +218,7 @@
                         </ul>  
                     </div>
                 </div>
+        
             </div>
 
             <div class="footer__bottom">

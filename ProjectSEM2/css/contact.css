@@ -20,8 +20,8 @@
   margin: 0 0 40px 0;
 }
 
- /*form  */
-  .form {
+/*form  */
+.form {
     min-height: 100px;
     padding: 10px;
     box-sizing: border-box;
@@ -73,6 +73,8 @@
   }
   
   .form-submit {
+    position: relative;
+    left: 40%;
     outline: none;
     background-color: #1dbfaf;
     margin-top: 12px;
@@ -80,7 +82,7 @@
     font-weight: 600;
     color: #fff;
     border: none;
-    width: 100%;
+    width: 100px;
     font-size: 14px;
     border-radius: 8px;
     cursor: pointer;
@@ -94,35 +96,17 @@
     margin-top: 36px;
   }
 
-.booking-img {
-  margin-top: 20px;
-  width: 100%;
+/* contact address */
+.contact__address {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 4px;
+    border-radius: 10px;
 }
 
-.boooking-text {
-  font-size: 1.4rem;
-  padding: 8px 0;;
+.contact__address-text {
+  color: var(--black-color);
+  font-size: 16px;
+  line-height: 16px;
+  padding: 6px 0;
 }
-
-.booking-image {
-  background-image: url(../assets/img/bg_ta2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
-}
-
-.booking-text {
-  margin-bottom: 40px;
-  color: #f5f1f1;
-  text-align: center;
-  position: relative;
-  font-size: 36px;
-  line-height: 36px;
-  top: 150px;
-}
-
-
-
-
-
-
