@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layoutadmin}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Schedule</title>
+</head>
+<body>
+
+<div class="content" layout:fragment="content">
+    <div class="container">
+        <div class="grid">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center" style="margin-top: 70px;">Add new Examination Schedule</h2>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4" style="padding: 30px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px">
+                    <form th:action="@{/saveExaminationSchedule}" th:object="${examinationSchedules}" method="POST" novalidate="novalidate">
+                        <input type="hidden" th:field="*{id}" />
+                        <br>
+                        <div class="form-group">
+                            <label>Specialty Name:</label>
+                            <select th:field="*{specialtyId}" class="form-control" required>
+                                <th:block th:each="specialty : ${listSpecialties}">
+                                    <option th:text="${specialty.name}" th:value="${specialty.id}" ></option>
+                                </th:block>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="slot">Slot:</label>
+                            <input type="number" step="1" id="slot" class="form-control" th:field="*{slot}" />
+                        </div>
+                        <div class="form-group">
+                            <label>Time:</label>
+                            <select th:field="*{examinationTimeId}" class="form-control" required>
+                                <th:block th:each="examinationTime : ${ListExaminationTimes}">
+                                    <option th:text="${examinationTime.name}" th:value="${examinationTime.id}" ></option>
+                                </th:block>
+                            </select>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between">
+                            <button type="submit" class="btn btn-success">Save</button>
+                            <button class="btn btn-primary active">
+                                <a th:href="@{/examinationSchedules/examinationSchedules}" class="text-white" role="button">Back</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layoutadmin}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Management</title>
+</head>
+<body>
+
+<div class="content" layout:fragment="content">
+    <div class="container">
+        <div class="grid">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center" style="margin-top: 70px;">Update Admin</h2>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4" style="padding: 30px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px">
+                    <form th:action="@{/showFormUpdateAdmin/{id}(id=${admin.id})}" th:object="${admin}"  method="post" enctype="multipart/form-data">
+                        <input type="hidden" th:field="*{id}" />
+                        <br>
+                        <div class="form-group">
+                            <label>Avatar</label>
+                            <input type="file" name="avatarnew" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" class="form-control" th:field="*{name}" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" class="form-control" th:field="*{phone}" />
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="radio">
+                                <!--value = 1 => Male| 0 =>Female -->
+                                <label class="checkbox-inline"> <input type="radio" th:field="*{gender}"
+                                                                       name="gender" value="1" id="gender1">Male</label>
+                                <label class="checkbox-inline"> <input type="radio" th:field="*{gender}"
+                                                                       name="gender" checked="checked" value="0" id="gender2">Female
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address" class="form-control" th:field="*{address}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" class="form-control" th:field="*{email}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" class="form-control" th:field="*{username}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input  type="password" id="password" class="form-control" th:field="*{password}" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Role:</label>
+                            <select th:field="*{roles}" class="form-control" required>
+                                <th:block th:each="role : ${ListRoles}">
+                                    <option th:text="${role.name}" th:value="${role.id}" />
+                                </th:block>
+                            </select>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between">
+                            <button type="submit" class="btn btn-success">Update</button>
+                            <button class="btn btn-primary active">
+                                <a th:href="@{/admins/admins}"  class="text-white" role="button">Back</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
