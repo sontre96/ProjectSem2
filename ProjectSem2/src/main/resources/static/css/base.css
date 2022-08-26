@@ -1,0 +1,87 @@
+/* CSS dùng chung */
+
+/* Đặt biến */
+:root{
+    --white-color: #ffffff;
+    --black-color: #000;
+    --primary-color: #0e5f50;
+   
+}
+
+/* nhúng các phần tử có sử dụng base.css */
+* {
+    box-sizing: inherit;
+}
+
+html{
+    /* 16px = 1rem && 62.5% => 10px = 1rem*/
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+
+h2.lined-heading span {
+    position: relative;
+    z-index: 1;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 2.8rem;
+    background: var(--white-color);
+    display: inline-block;
+    color: var(--primary-color);
+}
+
+.lined-heading {
+    position: relative;
+    margin: 40px 0;
+    text-align: center;
+    display: block;
+}
+
+ h2.lined-heading:before {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-top: 2px solid #ccc;
+    content: "";
+}
+
+/* call booking */
+
+.call-to-action {
+    background-color: #6ab8a9;
+}
+
+.call-to-text {
+    text-align: center;
+    line-height: 24px;
+    font-size: 2.4rem;
+    color: var(--white-color);
+}
+
+
+
+.call-action {
+    padding-top: 14px;
+    padding-left: 14px;
+}
+
+.call-action-link {
+    line-height: 40px;
+    font-size: 2rem;
+}
+
+.call-action-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    cursor: pointer;
+    width: 140px;
+    height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
