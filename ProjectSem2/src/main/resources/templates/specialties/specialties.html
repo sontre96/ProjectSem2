@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layoutadmin}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialty Management</title>
+</head>
+
+<body>
+<div class="content" layout:fragment="content">
+    <div class="container">
+        <div class="grid">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center" style="margin-top: 70px;">List Specialties</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <a th:href="@{/showNewSpecialtyForm}" class="btn btn-primary m-3">Add Specialty</a>
+                <div class="col-sm-12">
+                    <table class="table table-bordered table-striped text-center" id="specialtyTable">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="specialty, i: ${specialties}">
+                            <td th:text="${i.index+1}" />
+                            <td th:text="${specialty.name}" />
+                            <td th:text="${specialty.description}" />
+                            <td>
+                                <a th:href="@{/showFormUpdateSpecialty/{id}(id=${specialty.id})}" class="btn btn-primary">Update</a>
+                                &nbsp;
+                                <a th:href="@{/deleteSpecialty/{id}(id=${specialty.id})}" class="btn btn-danger ml-2">Delete</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#specialtyTable").DataTable({
+                'aoColumnDefs': [{
+                    'bSortable': false,
+                    'aTargets': [-1] /* 1st one, start by the right */
+                }]
+            });
+        })
+    </script>
+</div>
+</body>
+</html>

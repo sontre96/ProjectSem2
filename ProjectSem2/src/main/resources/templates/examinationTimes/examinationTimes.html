@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layoutadmin}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Time Management</title>
+</head>
+
+<body>
+<div class="content" layout:fragment="content">
+    <div class="container">
+        <div class="grid">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center" style="margin-top: 70px;">List Examination Time</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <a th:href="@{/showNewExaminationTimeForm}" class="btn btn-primary m-3">Add Examination Time</a>
+                <div class="col-sm-12">
+                    <table class="table table-bordered table-striped text-center" id="examinationTimeTable">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="examinationTime, i: ${examinationTimes}">
+                            <td th:text="${i.index+1}" />
+                            <td th:text="${examinationTime.name}" />
+                            <td>
+                                <a th:href="@{/showFormUpdateExaminationTime/{id}(id=${examinationTime.id})}" class="btn btn-primary">Update</a>
+                                &nbsp;
+                                <a th:href="@{/deleteExaminationTime/{id}(id=${examinationTime.id})}" class="btn btn-danger ml-2">Delete</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#examinationTimeTable").DataTable({
+                'aoColumnDefs': [{
+                    'bSortable': false,
+                    'aTargets': [-1] /* 1st one, start by the right */
+                }]
+            });
+        })
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layoutadmin}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Schedule</title>
+</head>
+<body>
+
+<div class="content" layout:fragment="content">
+    <div class="container">
+        <div class="grid">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center" style="margin-top: 70px;">Add new Appointment Schedule</h2>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4" style="padding: 30px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px">
+                    <form th:action="@{/saveAppointmentSchedule}" th:object="${appointmentSchedules}" method="POST" novalidate="novalidate">
+                        <input type="hidden" th:field="*{id}" />
+                        <br>
+
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" class="form-control" th:field="*{name}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" class="form-control" th:field="*{phone}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="orderDate">OrderDate:</label>
+                            <input type="text" id="orderDate" class="form-control" placeholder="dd-MM-yyyy" th:field="*{orderDate}" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Specialty Name:</label>
+                            <select th:field="*{specialtyId}" class="form-control" required>
+                                <th:block th:each="specialty : ${listSpecialties}">
+                                    <option th:text="${specialty.name}" th:value="${specialty.id}" ></option>
+                                </th:block>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Time:</label>
+                            <select th:field="*{examinationTimeId}" class="form-control" required>
+                                <th:block th:each="examinationTime : ${ListExaminationTimes}">
+                                    <option th:text="${examinationTime.name}" th:value="${examinationTime.id}" ></option>
+                                </th:block>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Price:</label>
+                            <select th:field="*{examinationPriceId}" class="form-control" required>
+                                <th:block th:each="examinationPrice : ${listExaminationPrices}">
+                                    <option th:text="${examinationPrice.name}" th:value="${examinationPrice.id}" ></option>
+                                </th:block>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Status</label>
+                            <div class="radio">
+                                <label class="checkbox-inline"> <input type="radio" th:field="*{orderStatus}" name="status" value="Confirm" id="status1">Confirm</label>
+                                <label class="checkbox-inline"> <input type="radio" th:field="*{orderStatus}"
+                                                                       name="status" checked="checked" value="Done" id="status2">Done</label>
+                                <label class="checkbox-inline"> <input type="radio" th:field="*{orderStatus}" name="status" value="Cancel" id="status3">Cancel</label>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between">
+                            <button type="submit" class="btn btn-success">Save</button>
+                            <button class="btn btn-primary active">
+                                <a th:href="@{/appointmentSchedules/appointmentSchedules}" class="text-white" role="button">Back</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic &nbsp;  Contact-page</title>
+
+    <!-- link ResetCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/grid.css}">
+    <link rel="stylesheet" th:href="@{/css/contact.css}">
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
+    <!-- icon web -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- link icons -->
+    <link rel="stylesheet" th:href="@{/fonts/fontawesome-free-6.1.1/css/all.min.css}">
+    <!-- link font chữ -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+    <!-- Header -->
+    <div class="header" id="navbar">
+        <div>
+            <nav class="header__navbar navbar">
+                <a th:href="@{/home}">
+                    <img th:src="@{/img/logo.png}" alt="" class="header__navbar-img">
+                </a>
+                <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div id="navbar-menu" aria-labelledby="navbar-toggle">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">
+                            <a th:href="@{/home}" class="header__navbar-item-link">Home</a>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a th:href="@{/home/introduce}" class="header__navbar-item-link">Introduce</a>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a th:href="@{/home/specialty}" class="header__navbar-item-link">Specialties</a>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a th:href="@{/home/booking}" class="header__navbar-item-link">Booking</a>
+                        </li>
+                        <li class="header__navbar-item active1">
+                            <a th:href="@{/home/contact}" class="header__navbar-item-link">Contact</a>
+                        </li>
+
+                        <div class="header__navbar-line"></div>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="app__container">
+        <div>
+            <div class="grid">
+                <div class="row">
+                    <div class="col l-12 m-12 c-12">
+                        <nav class="navbar__content">
+                            <p>
+                                <a th:href="@{/home}" class="navbar__content-link">Home</a>
+                                <span> &gt; </span>
+                                <span class="navbar__content-last">Contact</span>
+                            </p>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-7 c-12 m-12">
+                        <h2 class="lined-heading">
+                            <span>CONTACT US</span>
+                        </h2>
+
+                        <form th:action="@{/saveContactInfo}" method="POST" class="form" id="booking-form" name="Form" onsubmit="return validateForm()">
+                            <h3 class="heading">If you need our help, feel free to contact us❤️</h3>
+                            <div class="spacer"></div>
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full name: </label>
+                                <input id="name" name="name" type="text" placeholder="Enter your full name" class="form-control">
+                                <div class="error" id="nameErr"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone: </label>
+                                <input id="phone" name="phone" size="10" type="text" placeholder="Enter your phone" class="form-control">
+                                <div class="error" id="phoneErr"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email:</label>
+                                <input id="email" name="email" type="email" placeholder="Enter your email" class="form-control">
+                                <div class="error" id="emailErr"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="note" class="form-label">Note:</label>
+                                <textarea name="note" id="note" cols="30" rows="12" style="font-size: 18px;"></textarea>
+                                <div class="error" id="noteErr"></div>
+                            </div>
+                            <button class="form-submit">Send</button>
+                        </form>
+                    </div>
+
+                    <div class="col l-5 c-12 m-12">
+                        <h2 class="lined-heading">
+                            <span>ADDRESS</span>
+                        </h2>
+
+                        <img th:src="@{/img/address.jpg}" alt="Address clinic" class="contact__address">
+
+                        <div class="contact__address-text">
+                            <span>Name: Doctor care Polyclinic </span>
+                        </div>
+                        <div class="contact__address-text">
+                            <span>Address: 18 Nguyen Huu Tho street, <br> Hoang Liet, Hoang Mai, Ha Noi</span>
+                        </div>
+                        <div class="contact__address-text">
+                            <span>Hotline: 19001909 </span>
+                        </div>
+                        <div class="contact__address-text">
+                            <span>Phone: 024.38618257 </span>
+                        </div>
+
+                        <div class="contact__address-text">
+                            <span>Email: ThaoDo@gmail.com </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="google-map">
+            <div class="grid wide">
+                <div class="row">
+                    <div id="googleMap"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="call-to-action">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-10 m-10 c-12">
+                        <h2 class="call-to-text"> Make an appointment and use our service</h2>
+                        <h2 class="call-to-text"> Hotline: 19001909</h2>
+                    </div>
+                    <div class="col l-2 m-2 c-12 call-action">
+                        <a th:href="@{/home/booking}" class="call-action-link">
+                            <button class="call-action-btn">Booking</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="grid wide footer__content">
+            <div class="row">
+                <div class="col l-3 m-6 c-12">
+                    <h3 class="footer__heading">Clinic information</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                                <span class="footer-item__text">
+                                    Address: 18 Nguyen Huu Tho street, <br> Hoang Liet, Hoang Mai, Ha Noi <br>
+                                    Hotline: 19001909 <br>
+                                    Phone: 024.38618257<br>
+                                    Email: ThaoDo@gmail.com
+                                </span>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="col l-3 m-6 c-12">
+                    <h3 class="footer__heading">Time work</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                                <span class="footer-item__text">
+                                        Working time: <br><br>
+                                        Morning: 7h - 12h <br><br>
+                                        Afternoon: 13h30 - 18h
+                                </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col l-3 m-6 c-12">
+                    <h3 class="footer__heading"> Specialty</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a th:href="@{/home/specialty}" class="footer-item__link">Specialties</a>
+                        </li>
+                        <li class="footer-item">
+                            <a th:href="@{/home/booking}" class="footer-item__link">Booking</a>
+                        </li>
+                        <li class="footer-item">
+                            <a th:href="@{/home/contact}" class="footer-item__link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col l-3 m-6 c-12">
+                    <h3 class="footer__heading">About Us</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a th:href="@{/home/introduce}" class="footer-item__link">Introduce</a>
+                        </li>
+                        <li class="footer-item">
+                            <a th:href="@{/home/booking}" class="footer-item__link">Booking</a>
+                        </li>
+                        <li class="footer-item">
+                            <a th:href="@{/home/contact}" class="footer-item__link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="grid wide">
+                <p class="footer__text">© 2022 - Copyright of Team1 Project</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script th:src="@{/js/base.js}"></script>
+<script th:src="@{/js/contact.js}"></script>
+<script>
+    function myMap() {
+        var mapProp= {
+            center:new google.maps.LatLng(20.970896009206303,105.83904811349159),
+            zoom:18,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgQJFnUTm9rl8VxsFfZOv-Aom2LpPL0aM&callback=myMap"></script>
+
+
+</body>
+</html>

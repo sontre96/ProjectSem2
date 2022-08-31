@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layoutadmin}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors Management</title>
+</head>
+<body>
+
+<div class="content" layout:fragment="content">
+    <div class="container">
+        <div class="grid">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center" style="margin-top: 70px;">Add new Doctor</h2>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4" style="padding: 30px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px">
+                    <form th:action="@{/saveDoctor}" th:object="${doctors}"  method="post" enctype="multipart/form-data">
+                        <input type="hidden" th:field="*{id}" />
+                        <br>
+                        <div class="form-group">
+                            <label>Avatar</label>
+                            <input type="file" name="avatar" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" class="form-control" th:field="*{name}" />
+
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" class="form-control" th:field="*{phone}" />
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="radio">
+                                <!--value = 1 => Male| 0 =>Female -->
+                                <label class="checkbox-inline"> <input type="radio" th:field="*{gender}"
+                                                                       name="gender" value="1" id="gender1">Male</label>
+                                <label class="checkbox-inline"> <input type="radio" th:field="*{gender}"
+                                                                       name="gender" checked="checked" value="0" id="gender2">Female</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address" class="form-control" th:field="*{address}" />
+                        </div>
+                        <div class="form-group">
+                            <label>Specialty Name:</label>
+                            <select th:field="*{specialtyId}" class="form-control" required>
+                                <th:block th:each="specialty : ${listSpecialties}">
+                                    <option th:text="${specialty.name}" th:value="${specialty.id}" ></option>
+                                </th:block>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <div class="radio">
+                                <!--value = 1 => Male| 0 =>Female -->
+                                <label class="checkbox-inline"> <input type="radio" th:field="*{status}"
+                                                                       name="status" value="1" id="status1">Active</label>
+                                <label class="checkbox-inline"> <input type="radio" th:field="*{status}"
+                                                                       name="status" checked="checked" value="0" id="status">Absent
+                                </label>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between">
+                            <button type="submit" class="btn btn-success">Save</button>
+                            <button class="btn btn-primary active">
+                                <a th:href="@{/doctors/doctors}"  class="text-white" role="button">Back</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

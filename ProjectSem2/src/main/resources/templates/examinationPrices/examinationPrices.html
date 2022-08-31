@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layoutadmin}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Price Management</title>
+</head>
+
+<body>
+<div class="content" layout:fragment="content">
+    <div class="container">
+        <div class="grid">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center" style="margin-top: 70px;">List Examination Price</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <a th:href="@{/showNewExaminationPriceForm}" class="btn btn-primary m-3">Add Examination Price</a>
+                <div class="col-sm-12">
+                    <table class="table table-bordered table-striped text-center" id="examinationPriceTable">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="examinationPrice, i: ${examinationPrices}">
+                            <td th:text="${i.index+1}" />
+                            <td th:text="${examinationPrice.name}" />
+                            <td>
+                                <a th:href="@{/showFormUpdateExaminationPrice/{id}(id=${examinationPrice.id})}" class="btn btn-primary">Update</a>
+                                &nbsp;
+                                <a th:href="@{/deleteExaminationPrice/{id}(id=${examinationPrice.id})}" class="btn btn-danger ml-2">Delete</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#examinationPriceTable").DataTable({
+                'aoColumnDefs': [{
+                    'bSortable': false,
+                    'aTargets': [-1] /* 1st one, start by the right */
+                }]
+            });
+        })
+    </script>
+</div>
+</body>
+</html>
