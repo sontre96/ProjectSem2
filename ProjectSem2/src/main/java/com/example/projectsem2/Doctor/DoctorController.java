@@ -99,4 +99,11 @@ public class DoctorController {
         this.doctorService.deleteDoctor(id);
         return "redirect:/doctors/doctors";
     }
+
+    //count doctor
+    @GetMapping("/doctors/countDoctor")
+    public String countDoctor(Model model){
+        model.addAttribute("countDoctor",doctorService.CountDoctorByName());
+        return "doctors/countDoctor";
+    }
 }

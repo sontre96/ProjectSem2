@@ -44,6 +44,14 @@ public class AppointmentSchedule {
     @UpdateTimestamp
     private Date updatedAt;
 
+    @Basic
+    @Column(name = "specialty_id", insertable = false, updatable = false)
+    private Long specialtiesId;
+
+    @Basic
+    @Column(name = "examination_time_id", insertable = false, updatable = false)
+    private Long TimeId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "specialty_id", insertable = true, updatable = true)
     @EqualsAndHashCode.Exclude

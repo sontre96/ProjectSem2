@@ -1,6 +1,6 @@
 package com.example.projectsem2.AppointmentSchedule;
 
-import com.example.projectsem2.ExaminationSchedule.ExaminationSchedule;
+import com.example.projectsem2.dto.CountAppointmentSchedule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +23,11 @@ public class AppointmentScheduleServiceImp implements AppointmentScheduleService
     }
 
     @Override
+    public AppointmentSchedule saveAppointmentScheduleInfo(AppointmentSchedule appointmentSchedule) {
+        return appointmentScheduleRepository.save(appointmentSchedule);
+    }
+
+    @Override
     public void deleteAppointmentSchedule(Long id) {
         appointmentScheduleRepository.deleteById(id);
     }
@@ -42,5 +47,10 @@ public class AppointmentScheduleServiceImp implements AppointmentScheduleService
     @Override
     public AppointmentSchedule getOne(Long id) {
         return appointmentScheduleRepository.findById(id).get();
+    }
+
+    @Override
+    public List<CountAppointmentSchedule> countAppointmentSchedule() {
+        return appointmentScheduleRepository.countAppointmentSchedule();
     }
 }

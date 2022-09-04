@@ -40,7 +40,12 @@ public class TblDoctor {
     @UpdateTimestamp
     private Date updatedAt;
 
-    @ManyToOne
+    @Basic
+    @Column(name = "specialty_id", insertable = false, updatable = false)
+    private Long specialtiesId;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "specialty_id", insertable = true, updatable = true)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude

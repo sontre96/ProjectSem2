@@ -78,4 +78,11 @@ public class AppointmentScheduleController {
         this.appointmentScheduleService.deleteAppointmentSchedule(id);
         return "redirect:/appointmentSchedules/appointmentSchedules";
     }
+
+    //count appointmentSchedule
+    @GetMapping("/appointmentSchedules/countAppointmentSchedule")
+    public String countDoctor(Model model){
+        model.addAttribute("countAppointmentSchedule", appointmentScheduleService.countAppointmentSchedule());
+        return "appointmentSchedules/countAppointmentSchedule";
+    }
 }

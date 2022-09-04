@@ -22,6 +22,11 @@ public class ContactServiceImp implements ContactService{
     }
 
     @Override
+    public TblContact saveContactInfo(TblContact contact) {
+        return contactRepository.save(contact);
+    }
+
+    @Override
     public void deleteContact(Long id) {
         contactRepository.deleteById(id);
     }

@@ -1,5 +1,6 @@
 package com.example.projectsem2.Doctor;
 
+import com.example.projectsem2.dto.CountDoctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,5 +47,11 @@ public class DoctorServiceImp implements DoctorService{
     @Override
     public List<TblDoctor> findAll() {
         return null;
+    }
+
+    // count Doctor
+    @Override
+    public List<CountDoctor> CountDoctorByName() {
+        return doctorRepository.CountDoctorByName();
     }
 }

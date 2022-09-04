@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //Các trang không yêu cầu login như vậy ai cũng có thể vào được
 
         http.authorizeRequests().antMatchers("/", "/home/**", "/login", "/logout", "/register", "/registerSubmit", "/css/**",
-                "/js/**", "/img/**", "/fonts/**").permitAll();
+                "/js/**", "/img/**", "/fonts/**", "/saveAppointmentScheduleInfo", "/saveContactInfo").permitAll();
 
         // Trang chỉ dành cho ADMIN
         http.authorizeRequests().antMatchers("/**").access("hasRole('ROLE_ADMIN')");

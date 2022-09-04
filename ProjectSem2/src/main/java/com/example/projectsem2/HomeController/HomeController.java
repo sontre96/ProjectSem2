@@ -75,14 +75,14 @@ public class HomeController {
     //save user booking
     @PostMapping(value = "/saveAppointmentScheduleInfo")
     public String saveUserInfo(@ModelAttribute("appointmentScheduleInfo") AppointmentSchedule appointmentScheduleInfo) {
-        appointmentScheduleService.saveAppointmentSchedule(appointmentScheduleInfo);
+        appointmentScheduleService.saveAppointmentScheduleInfo(appointmentScheduleInfo);
         return "redirect:/home/thankBooking";
     }
 
-    //save user booking
+    //save contact
     @PostMapping(value = "/saveContactInfo")
-    public String saveContactInfo(@ModelAttribute("ContactInfo") TblContact contactInfo) {
-        contactService.saveContact(contactInfo);
+    public String saveContactInfo(@ModelAttribute("contactInfo") TblContact contactInfo) {
+        contactService.saveContactInfo(contactInfo);
         return "redirect:/home/thankContact";
     }
 

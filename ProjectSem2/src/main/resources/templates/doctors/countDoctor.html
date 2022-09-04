@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layoutadmin}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors of Specialty</title>
+</head>
+
+<body>
+<div class="content" layout:fragment="content">
+  <div class="container">
+    <div class="grid">
+      <div class="row">
+        <div class="col">
+          <h2 class="text-center" style="margin-top: 70px;">Doctors of Specialty</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <table class="table table-bordered table-striped text-center" id="countDoctorTable">
+            <thead>
+            <tr>
+              <th>No</th>
+              <th>Specialty Name</th>
+              <th>Number Of Doctors</th>
+              <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="doctor, i: ${countDoctor}">
+              <td th:text="${i.index+1}" />
+              <td th:text="${doctor.nameSpecialty}" />
+              <td th:text="${doctor.numberOfDoctors}" />
+              <td><span th:text="${doctor.status}? 'Active' : 'Absent' "></span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $("#countDoctorTable").DataTable({
+        'aoColumnDefs': [{
+          'bSortable': false,
+          'aTargets': [-1] /* 1st one, start by the right */
+        }]
+      });
+    })
+  </script>
+</div>
+</body>
+</html>

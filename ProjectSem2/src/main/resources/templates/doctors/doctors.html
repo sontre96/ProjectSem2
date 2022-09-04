@@ -45,7 +45,7 @@
                             <td><span th:text="${doctor.gender}? 'Male' : 'Female' "></span></td>
                             <td th:text="${doctor.address}" />
                             <td th:text="${doctor.specialtyId.name}" />
-                            <td><span th:text="${doctor.status}? 'Actice' : 'Absent' "></span></td>
+                            <td><span th:text="${doctor.status}? 'Active' : 'Absent' "></span></td>
                             <td>
                                 <a th:href="@{/showFormUpdateDoctor/{id}(id=${doctor.id})}" class="btn btn-primary">Update</a>
                                 &nbsp;

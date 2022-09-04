@@ -27,8 +27,9 @@
                         <tr>
                             <th>No</th>
                             <th>Specialty</th>
-                            <th>Slot</th>
+                            <th>Slot Free</th>
                             <th>Time</th>
+                            <th>UpdateDay</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -38,6 +39,7 @@
                             <td th:text="${examinationSchedule.specialtyId.name}" />
                             <td th:text="${examinationSchedule.slot}" />
                             <td th:text="${examinationSchedule.examinationTimeId.name}" />
+                            <td th:text="${examinationSchedule.updatedAt}" />
                             <td>
                                 <a th:href="@{/showFormUpdateExaminationSchedule/{id}(id=${examinationSchedule.id})}" class="btn btn-primary">Update</a>
                                 &nbsp;

@@ -7,6 +7,8 @@ public interface ContactService {
 
     void saveContact(TblContact contact);
 
+    TblContact saveContactInfo(TblContact contact);
+
     void deleteContact(Long id);
 
     TblContact getContactById(Long id);

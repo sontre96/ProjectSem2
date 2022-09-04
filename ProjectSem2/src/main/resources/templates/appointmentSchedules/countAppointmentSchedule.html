@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layoutadmin}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Register List</title>
+</head>
+
+<body>
+<div class="content" layout:fragment="content">
+    <div class="container">
+        <div class="grid">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center" style="margin-top: 70px;">Customer Register List</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered table-striped text-center" id="countAppointmentScheduleTable">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Specialty Name</th>
+                            <th>OrderDate</th>
+                            <th>Time</th>
+                            <th>Number Customer Register</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="appointmentSchedule, i: ${countAppointmentSchedule}">
+                            <td th:text="${i.index+1}" />
+                            <td th:text="${appointmentSchedule.name}" />
+                            <td th:text="${appointmentSchedule.orderDate}" />
+                            <td th:text="${appointmentSchedule.time}" />
+                            <td th:text="${appointmentSchedule.numberOfRegisteredCustomers}" />
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#countAppointmentScheduleTable").DataTable({
+                'aoColumnDefs': [{
+                    'bSortable': false,
+                    'aTargets': [-1] /* 1st one, start by the right */
+                }]
+            });
+        })
+    </script>
+</div>
+</body>
+</html>

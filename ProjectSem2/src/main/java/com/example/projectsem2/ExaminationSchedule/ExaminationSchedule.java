@@ -5,6 +5,8 @@ import com.example.projectsem2.Specialty.TblSpecialty;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -27,6 +29,7 @@ public class ExaminationSchedule {
     @Basic
     @Column(name = "updated_at", updatable = true)
     @UpdateTimestamp
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date updatedAt;
 
     @ManyToOne

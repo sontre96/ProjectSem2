@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Date;
 
@@ -20,6 +21,7 @@ public class ExaminationTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "name")
+    @NotEmpty(message = "name is mandatory")
     private String name;
     @Basic
     @Column(name = "created_at", updatable = false)
