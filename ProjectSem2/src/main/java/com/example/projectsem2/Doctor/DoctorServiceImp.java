@@ -1,6 +1,7 @@
 package com.example.projectsem2.Doctor;
 
 import com.example.projectsem2.dto.CountDoctor;
+import com.example.projectsem2.dto.DoctorsDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,5 +54,65 @@ public class DoctorServiceImp implements DoctorService{
     @Override
     public List<CountDoctor> CountDoctorByName() {
         return doctorRepository.CountDoctorByName();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorCardiology() {
+        return doctorRepository.doctorCardiology();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorCentralNervousSystem() {
+        return doctorRepository.doctorCentralNervousSystem();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorFertilityCenter() {
+        return doctorRepository.doctorFertilityCenter();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorMedicalExaminationDepartment() {
+        return doctorRepository.doctorMedicalExaminationDepartment();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorOrthopedicDepartment() {
+        return doctorRepository.doctorOrthopedicDepartment();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorOtorhinolaryngology() {
+        return doctorRepository.doctorOtorhinolaryngology();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorPediatricsDepartment() {
+        return doctorRepository.doctorPediatricsDepartment();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorPharmacyDepartment() {
+        return doctorRepository.doctorPharmacyDepartment();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorRespiratoryMedicine() {
+        return doctorRepository.doctorRespiratoryMedicine();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorTestingCenter() {
+        return doctorRepository.doctorTestingCenter();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorVaccinationCenter() {
+        return doctorRepository.doctorVaccinationCenter();
+    }
+
+    @Override
+    public List<DoctorsDTO> doctorTrainingAndResearchCenter() {
+        return doctorRepository.doctorTrainingAndResearchCenter();
     }
 }

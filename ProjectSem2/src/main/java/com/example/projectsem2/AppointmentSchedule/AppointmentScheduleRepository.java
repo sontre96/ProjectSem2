@@ -1,5 +1,6 @@
 package com.example.projectsem2.AppointmentSchedule;
 
+import com.example.projectsem2.dto.AppointmentScheduleStatus;
 import com.example.projectsem2.dto.CountAppointmentSchedule;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -9,11 +10,40 @@ import java.util.List;
 
 @Repository
 public interface AppointmentScheduleRepository extends JpaRepository<AppointmentSchedule, Long> {
-    public List<AppointmentSchedule> findAllByOrderByIdAsc();
+    public List<AppointmentSchedule> findAllByOrderByOrderDateDesc();
 
     //count Appointment Schedule
-    @Query("select new com.example.projectsem2.dto.CountAppointmentSchedule (a.name, a.orderDate, e.name, count(s.name) ) " +
+    @Query("select new com.example.projectsem2.dto.CountAppointmentSchedule (s.name, a.orderDate, e.name, count(s.name) ) " +
             "from AppointmentSchedule a inner join TblSpecialty s on a.specialtiesId = s.id inner join " +
-            "ExaminationTime e on a.TimeId = e.id group by a.name, a.orderDate, e.name")
+            "ExaminationTime e on a.TimeId = e.id  group by s.name, a.orderDate, e.name ")
     List<CountAppointmentSchedule> countAppointmentSchedule();
+
+    // search by status = null
+    @Query("select new com.example.projectsem2.dto.AppointmentScheduleStatus " +
+            "(a.name, a.phone, a.orderDate, s.name, t.name, p.name, a.orderStatus) " +
+            "from AppointmentSchedule a inner join TblSpecialty s on a.specialtiesId = s.id inner join " +
+            "ExaminationTime t on a.TimeId = t.id inner join ExaminationPrice p on a.PriceId = p.id  where a.orderStatus is null")
+    List<AppointmentScheduleStatus> bookingNull();
+
+    // search by status = confirm
+    @Query("select new com.example.projectsem2.dto.AppointmentScheduleStatus " +
+            "(a.name, a.phone, a.orderDate, s.name, t.name, p.name, a.orderStatus) " +
+            "from AppointmentSchedule a inner join TblSpecialty s on a.specialtiesId = s.id inner join " +
+            "ExaminationTime t on a.TimeId = t.id inner join ExaminationPrice p on a.PriceId = p.id  where a.orderStatus like ('confirm')")
+    List<AppointmentScheduleStatus> bookingConfirm();
+
+    // search by status = done
+    @Query("select new com.example.projectsem2.dto.AppointmentScheduleStatus " +
+            "(a.name, a.phone, a.orderDate, s.name, t.name, p.name, a.orderStatus) " +
+            "from AppointmentSchedule a inner join TblSpecialty s on a.specialtiesId = s.id inner join " +
+            "ExaminationTime t on a.TimeId = t.id inner join ExaminationPrice p on a.PriceId = p.id  where a.orderStatus like ('done')")
+    List<AppointmentScheduleStatus> bookingDone();
+
+    // search by status = cancel
+    @Query("select new com.example.projectsem2.dto.AppointmentScheduleStatus " +
+            "(a.name, a.phone, a.orderDate, s.name, t.name, p.name, a.orderStatus) " +
+            "from AppointmentSchedule a inner join TblSpecialty s on a.specialtiesId = s.id inner join " +
+            "ExaminationTime t on a.TimeId = t.id inner join ExaminationPrice p on a.PriceId = p.id  where a.orderStatus like ('Cancel')")
+    List<AppointmentScheduleStatus> bookingCancel();
+
 }

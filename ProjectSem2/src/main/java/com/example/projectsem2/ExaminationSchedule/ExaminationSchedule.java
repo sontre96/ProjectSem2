@@ -1,6 +1,6 @@
 package com.example.projectsem2.ExaminationSchedule;
 
-import com.example.projectsem2.ExaminationTime.ExaminationTime;
+import com.example.projectsem2.ExaminationDay.ExaminationDay;
 import com.example.projectsem2.Specialty.TblSpecialty;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -39,8 +39,8 @@ public class ExaminationSchedule {
     private TblSpecialty specialtyId;
 
     @ManyToOne
-    @JoinColumn(name = "examination_time_id", insertable = true, updatable = true)
+    @JoinColumn(name = "examination_day_id", insertable = true, updatable = true)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    private ExaminationTime examinationTimeId;
+    private ExaminationDay examinationDayId;
 }

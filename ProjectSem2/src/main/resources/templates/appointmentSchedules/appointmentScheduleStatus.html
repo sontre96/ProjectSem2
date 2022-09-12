@@ -22,25 +22,33 @@
             <hr>
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table table-bordered table-striped text-center" id="countAppointmentScheduleTable">
+                    <div>
+                        <a th:href="@{/appointmentSchedules/appointmentSchedules}" class="btn btn-primary">Back</a>
+                    </div>
+                    <br>
+                    <table class="table table-bordered table-striped text-center" id="appointmentScheduleStatusTable">
                         <thead>
                         <tr>
                             <th>No</th>
-                            <th>Specialty Name</th>
+                            <th>Name</th>
+                            <th>Phone</th>
                             <th>OrderDate</th>
+                            <th>Specialty Name</th>
                             <th>Time</th>
-                            <th>Number of Customer Booked</th>
-
+                            <th>Price</th>
+                            <th>Status</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="appointmentSchedule, i: ${countAppointmentSchedule}">
+                        <tr th:each="status, i: ${appointmentScheduleStatus}">
                             <td th:text="${i.index+1}" />
-                            <td th:text="${appointmentSchedule.name}" />
-                            <td th:text="${appointmentSchedule.orderDate}" />
-                            <td th:text="${appointmentSchedule.time}" />
-                            <td th:text="${appointmentSchedule.numberOfRegisteredCustomers}" />
-
+                            <td th:text="${status.name}" />
+                            <td th:text="${status.phone}" />
+                            <td th:text="${status.orderDate}" />
+                            <td th:text="${status.specialtyName}" />
+                            <td th:text="${status.time}" />
+                            <td th:text="${status.price}" />
+                            <td th:text="${status.orderStatus}" />
                         </tr>
                         </tbody>
                     </table>
@@ -50,7 +58,7 @@
     </div>
     <script>
         $(document).ready(function() {
-            $("#countAppointmentScheduleTable").DataTable({
+            $("#appointmentScheduleStatusTable").DataTable({
                 'aoColumnDefs': [{
                     'bSortable': false,
                     'aTargets': [-1] /* 1st one, start by the right */

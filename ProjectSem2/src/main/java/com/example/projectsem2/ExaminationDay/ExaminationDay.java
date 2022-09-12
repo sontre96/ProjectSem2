@@ -1,6 +1,5 @@
-package com.example.projectsem2.ExaminationTime;
+package com.example.projectsem2.ExaminationDay;
 
-import com.example.projectsem2.AppointmentSchedule.AppointmentSchedule;
 import com.example.projectsem2.ExaminationSchedule.ExaminationSchedule;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,11 +11,11 @@ import java.util.Collection;
 import java.util.Date;
 
 @Entity
-@Table(name = "examination_time")
+@Table(name = "examination_day")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ExaminationTime {
+public class ExaminationDay {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -32,10 +31,8 @@ public class ExaminationTime {
     @UpdateTimestamp
     private Date updatedAt;
 
-
-    @OneToMany(mappedBy = "examinationTimeId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "examinationDayId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    private Collection<AppointmentSchedule> appointmentSchedules;
-
+    private Collection<ExaminationSchedule> examinationSchedules;
 }

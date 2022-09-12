@@ -52,6 +52,10 @@ public class AppointmentSchedule {
     @Column(name = "examination_time_id", insertable = false, updatable = false)
     private Long TimeId;
 
+    @Basic
+    @Column(name = "examination_price_id", insertable = false, updatable = false)
+    private Long PriceId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "specialty_id", insertable = true, updatable = true)
     @EqualsAndHashCode.Exclude

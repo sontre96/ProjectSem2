@@ -39,7 +39,6 @@ public class TblDoctor {
     @Column(name = "updated_at", updatable = true)
     @UpdateTimestamp
     private Date updatedAt;
-
     @Basic
     @Column(name = "specialty_id", insertable = false, updatable = false)
     private Long specialtiesId;

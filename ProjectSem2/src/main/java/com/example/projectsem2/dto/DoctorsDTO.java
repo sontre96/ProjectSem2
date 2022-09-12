@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CountDoctor {
+public class DoctorsDTO {
+    private String name;
+    private boolean gender;
     private String nameSpecialty;
-    private long numberOfDoctors;
+    private boolean statusDoctor;
 }

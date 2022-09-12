@@ -1,5 +1,5 @@
 .thank-you {
-    height: 500px;
+    height: 600px;
     width: 100%;
 }
 
@@ -32,4 +32,17 @@
     margin-bottom: 30px;
     color: var(--primary-color);
     font-weight: 700;
+}
+
+.table-info, th, td {
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.thank-booking {
+    color: var(--primary-color);
+    line-height: 28px;
+    font-size: 24px;
+    font-weight: 500;
 }

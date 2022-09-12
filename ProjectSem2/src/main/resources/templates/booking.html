@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"
+<html
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -139,7 +139,7 @@
                         </div>
                         <div class="col l-1 m-0 c-0"> </div>
                         <div class="col l-6 m-12 c-12">
-                            <form th:action="@{/saveAppointmentScheduleInfo}" method="POST" class="form" id="booking-form" name="Form" onsubmit="return validateForm()">
+                            <form th:action="@{/saveAppointmentScheduleInfo}"    method="POST" class="form" id="booking-form" name="Form" onsubmit="return validateForm()">
                                 <h3 class="heading">Appointment Booking form</h3>
                                 <p class="desc">Let's join hands for good health ❤️</p>
                                 <div class="spacer"></div>
@@ -159,7 +159,7 @@
                                     <input id="orderDate" name="orderDate" type="text" placeholder="Enter you set your schedule" class="form-control">
                                     <div class="error" id="orderDateErr"></div>
                                 </div>
-
+                                <!--  value="examinationTimeId" / Khi thay đổi id trong bảng timeWorks thì nhớ thay đổi lại value-->
                                 <div class="form-group">
                                     <label for="examinationTimeId" class="form-label">Choose time booking schedule:</label>
                                     <select id="examinationTimeId" name="examinationTimeId" class="form-control" >
@@ -173,7 +173,7 @@
                                     </select>
                                     <div class="error" id="examinationTimeIdErr"></div>
                                 </div>
-
+                                <!--  value="specialtyId" / Khi thay đổi id trong bảng timeWorks thì nhớ thay đổi lại value-->
                                 <div class="form-group">
                                     <label for="specialtyId" class="form-label">Choose Specialty:</label>
                                     <select id="specialtyId" name="specialtyId" class="form-control">
@@ -189,11 +189,10 @@
                                         <option text="Medical Examination Department" value="11">Medical Examination Department</option>
                                         <option text="Fertility Center" value="12">Fertility Center</option>
                                         <option text="Vaccination Center" value="13">Vaccination Center</option>
-                                        <option text="Training and Research Center" value="14">Training and Research Center</option>
                                     </select>
                                     <div class="error" id="specialtyIdErr"></div>
                                 </div>
-
+                                <!--  value="examinationPriceId" / Khi thay đổi id trong bảng timeWorks thì nhớ thay đổi lại value-->
                                 <div class="form-group">
                                     <label for="examinationPriceId" class="form-label">Choose examination service:</label>
                                     <select id="examinationPriceId" name="examinationPriceId" class="form-control" >
@@ -202,6 +201,7 @@
                                         <option text="Standard: 40$" value="2">Standard: 40$</option>
                                         <option text="Premium: 60$" value="3">Premium: 60$</option>
                                     </select>
+
                                     <div class="error" id="examinationPriceIdErr"></div>
                                 </div>
                                 <button class="form-submit">Book an appointment</button>
@@ -302,7 +302,7 @@
 
             <div class="footer__bottom">
                 <div class="grid wide">
-                    <p class="footer__text">© 2022 - Copyright of Team1 Project</p>
+                    <p class="footer__text">© 2022 - Copyright of Doctor Care Team Project</p>
                 </div>
             </div>
         </footer>

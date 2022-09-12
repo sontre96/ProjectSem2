@@ -106,4 +106,88 @@ public class DoctorController {
         model.addAttribute("countDoctor",doctorService.CountDoctorByName());
         return "doctors/countDoctor";
     }
+
+    //search doctors in  cardiology Department
+    @GetMapping("/doctors/doctorsCardiology")
+    public String doctorsCardiology(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorCardiology());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  department of central nervous system
+    @GetMapping("/doctors/doctorsCentralNervousSystem")
+    public String doctorsCentralNervousSystem(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorCentralNervousSystem());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  FertilityCenter
+    @GetMapping("/doctors/doctorsFertilityCenter")
+    public String doctorsFertilityCenter(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorFertilityCenter());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  MedicalExaminationDepartment
+    @GetMapping("/doctors/doctorsMedicalExaminationDepartment")
+    public String doctorsMedicalExaminationDepartment(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorMedicalExaminationDepartment());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  OrthopedicDepartment
+    @GetMapping("/doctors/doctorsOrthopedicDepartment")
+    public String doctorsOrthopedicDepartment(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorOrthopedicDepartment());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  Otorhinolaryngology
+    @GetMapping("/doctors/doctorsOtorhinolaryngology")
+    public String doctorsOtorhinolaryngology(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorOtorhinolaryngology());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  Pediatrics Department
+    @GetMapping("/doctors/doctorsPediatricsDepartment")
+    public String doctorsPediatricsDepartment(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorPediatricsDepartment());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  Pharmacy Department
+    @GetMapping("/doctors/doctorsPharmacyDepartment")
+    public String doctorsPharmacyDepartment(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorPharmacyDepartment());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  Respiratory Medicine
+    @GetMapping("/doctors/doctorsRespiratoryMedicine")
+    public String doctorsRespiratoryMedicine(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorRespiratoryMedicine());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  Testing Center
+    @GetMapping("/doctors/doctorsTestingCenter")
+    public String doctorsTestingCenter(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorTestingCenter());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  Vaccination Center
+    @GetMapping("/doctors/doctorsVaccinationCenter")
+    public String doctorsVaccinationCenter(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorVaccinationCenter());
+        return "doctors/doctorsDepartment";
+    }
+
+    //search doctors in  Training And Research Center
+    @GetMapping("/doctors/doctorsTrainingAndResearchCenter")
+    public String doctorsTrainingAndResearchCenter(Model model){
+        model.addAttribute("doctorsDepartment", doctorService.doctorTrainingAndResearchCenter());
+        return "doctors/doctorsDepartment";
+    }
 }

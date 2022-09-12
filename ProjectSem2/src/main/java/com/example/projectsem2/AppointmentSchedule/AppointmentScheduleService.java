@@ -1,6 +1,8 @@
 package com.example.projectsem2.AppointmentSchedule;
 
+import com.example.projectsem2.dto.AppointmentScheduleStatus;
 import com.example.projectsem2.dto.CountAppointmentSchedule;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
@@ -19,4 +21,17 @@ public interface AppointmentScheduleService {
 
     //Count Appointment Schedule
     List<CountAppointmentSchedule> countAppointmentSchedule();
+
+    // search by status = confirm
+    List<AppointmentScheduleStatus> bookingConfirm();
+
+    // search by status = null
+    List<AppointmentScheduleStatus> bookingNull();
+
+    // search by status = done
+    List<AppointmentScheduleStatus> bookingDone();
+
+    // search by status = cancel
+    List<AppointmentScheduleStatus> bookingCancel();
+
 }

@@ -20,8 +20,14 @@
             </div>
             <hr>
             <div class="row">
-                <a th:href="@{/showNewAppointmentScheduleForm}" class="btn btn-primary m-3">Add Appointment Schedule</a>
                 <div class="col-sm-12">
+                    <div>
+                        <a th:href="@{/appointmentSchedules/appointmentScheduleStatusNull}" class="btn btn-info">Unconfirmed</a> &nbsp;&nbsp;
+                        <a th:href="@{/appointmentSchedules/appointmentScheduleStatusConfirm}" class="btn btn-info">Confirm</a> &nbsp;&nbsp;
+                        <a th:href="@{/appointmentSchedules/appointmentScheduleStatusDone}" class="btn btn-info">Done</a> &nbsp;&nbsp;
+                        <a th:href="@{/appointmentSchedules/appointmentScheduleStatusCancel}" class="btn btn-info">Cancel</a>
+                    </div>
+                    <br>
                     <table class="table table-bordered table-striped text-center" id="appointmentScheduleTable">
                         <thead>
                         <tr>

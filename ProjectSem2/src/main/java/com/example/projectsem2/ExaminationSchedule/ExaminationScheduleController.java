@@ -1,8 +1,7 @@
 package com.example.projectsem2.ExaminationSchedule;
 
-import com.example.projectsem2.ExaminationPrice.ExaminationPrice;
-import com.example.projectsem2.ExaminationTime.ExaminationTime;
-import com.example.projectsem2.ExaminationTime.ExaminationTimeService;
+import com.example.projectsem2.ExaminationDay.ExaminationDay;
+import com.example.projectsem2.ExaminationDay.ExaminationDayService;
 import com.example.projectsem2.Specialty.SpecialtyService;
 import com.example.projectsem2.Specialty.TblSpecialty;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,7 @@ public class ExaminationScheduleController {
     @Autowired
     SpecialtyService specialtyService;
     @Autowired
-    ExaminationTimeService examinationTimeService;
+    ExaminationDayService examinationDayService;
 
     //get all
     @GetMapping("/examinationSchedules/examinationSchedules")
@@ -36,11 +35,11 @@ public class ExaminationScheduleController {
     @GetMapping("/showNewExaminationScheduleForm")
     public String showNewExaminationScheduleForm(Model model) {
         List<TblSpecialty> listSpecialties = specialtyService.getAllSpecialty();
-        List<ExaminationTime> ListExaminationTimes = examinationTimeService.getAllExaminationTime();
+        List<ExaminationDay> ListExaminationDays = examinationDayService.getAllExaminationDay();
 
         model.addAttribute("examinationSchedules", new ExaminationSchedule());
         model.addAttribute("listSpecialties", listSpecialties);
-        model.addAttribute("ListExaminationTimes",ListExaminationTimes);
+        model.addAttribute("ListExaminationDays", ListExaminationDays);
         return "examinationSchedules/newExaminationSchedule";
     }
 
@@ -56,11 +55,10 @@ public class ExaminationScheduleController {
     public String showFormForUpdateExaminationSchedule(@PathVariable(value = "id") long id, Model model) {
         ExaminationSchedule examinationSchedules = examinationScheduleService.getExaminationScheduleById(id);
         model.addAttribute("examinationSchedules", examinationSchedules);
-        //set contact as a model attribute to pre-populate the form
        List<TblSpecialty> listSpecialties = specialtyService.getAllSpecialty();
        model.addAttribute("listSpecialties", listSpecialties);
-       List<ExaminationTime> ListExaminationTimes = examinationTimeService.getAllExaminationTime();
-       model.addAttribute("ListExaminationTimes", ListExaminationTimes);
+       List<ExaminationDay> ListExaminationDays = examinationDayService.getAllExaminationDay();
+       model.addAttribute("ListExaminationDays", ListExaminationDays);
         return "examinationSchedules/updateExaminationSchedule";
     }
 

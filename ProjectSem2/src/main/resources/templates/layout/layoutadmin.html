@@ -19,13 +19,6 @@
 <!--  navbar start -->
 <nav class="navbar navbar-dark bg-dark fixed-top" layout:fragment="navbar">
     <a class="navbar-brand" style="margin-left: 40px;" th:href="@{/admins/admins}">Admin Management</a>
-
-    <a class="navbar-brand" style="margin-left: 40px;" th:href="@{/admins/admins}"></a>
-    <a class="navbar-brand" style="margin-left: 40px;" th:href="@{/admins/admins}"></a>
-    <a class="navbar-brand" style="margin-left: 40px;" th:href="@{/admins/admins}"></a>
-    <a class="navbar-brand" style="margin-left: 40px;" th:href="@{/admins/admins}"></a>
-    <a class="navbar-brand" style="margin-left: 40px;" th:href="@{/appointmentSchedules/countAppointmentSchedule}">Customer Register List</a>
-    <a class="navbar-brand" style="margin-left: 40px;" th:href="@{/doctors/countDoctor}">Doctors of Specialty</a>
 </nav>
 <!-- navbar end -->
 <!-- sidebar start -->
@@ -34,15 +27,16 @@
         <img th:src="@{/img/th.jpg}" class="profile_image" alt="">
         <h4>Admin </h4>
     </center>
-    <a th:href="@{/admins/admins}"><span>Admin</span></a>
     <a th:href="@{/doctors/doctors}"><span>Doctor</span></a>
     <a th:href="@{/specialties/specialties}"><span>Specialties</span></a>
+    <a th:href="@{/doctors/countDoctor}">Doctors of Specialty</a>
     <a th:href="@{/appointmentSchedules/appointmentSchedules}"><span>Appointment Schedule</span></a>
-    <a th:href="@{/examinationSchedules/examinationSchedules}"><span>Daily Examination Schedule</span></a>
+    <a th:href="@{/appointmentSchedules/countAppointmentSchedule}">Appointment Schedule List</a>
+    <a th:href="@{/examinationSchedules/examinationSchedules}"><span>Examination Schedule</span></a>
+    <a th:href="@{/examinationDays/examinationDays}"><span>Examination Day</span></a>
     <a th:href="@{/examinationPrices/examinationPrices}"><span>Examination Price</span></a>
     <a th:href="@{/examinationTimes/examinationTimes}"><span>Examination Time</span></a>
     <a th:href="@{/contacts/contacts}"><span>Contacts</span></a>
-    <br><br>
     <a th:href="@{/logoutSuccessful}">
         <i class="fa-solid fa-right-from-bracket">
             <span> Logout </span>
@@ -53,16 +47,6 @@
 
 <!-- content-->
 <div layout:fragment="content"></div>
-
-<!-- Footer -->
-<!--<br><br><br><br>-->
-<!--<footer th:fragment="footer" class="container">-->
-<!--  <div class="row">-->
-<!--    <div class="col">-->
-<!--      <div class="text-center"> Copyright © &nbsp; 07/2022 - 09/2022 &nbsp; &nbsp; Nguyen Hoang Son</div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</footer>-->
 
 </body>
 </html>

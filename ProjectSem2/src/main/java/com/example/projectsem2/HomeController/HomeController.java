@@ -15,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -62,21 +63,22 @@ public class HomeController {
         return "contact";
     }
 
-    @GetMapping(value = "/home/thankBooking")
-    public String viewThankBookingPage() {
-        return "thankBooking";
-    }
-
     @GetMapping(value = "/home/thankContact")
     public String viewThankContactPage() {
         return "thankContact";
     }
 
+
     //save user booking
     @PostMapping(value = "/saveAppointmentScheduleInfo")
-    public String saveUserInfo(@ModelAttribute("appointmentScheduleInfo") AppointmentSchedule appointmentScheduleInfo) {
-        appointmentScheduleService.saveAppointmentScheduleInfo(appointmentScheduleInfo);
-        return "redirect:/home/thankBooking";
+    public ModelAndView saveUserBooking(@ModelAttribute AppointmentSchedule appointmentScheduleInfo)
+    {
+        System.out.println("AppointmentScheduleInfo from UI = " + appointmentScheduleInfo);
+        appointmentScheduleService.saveAppointmentSchedule(appointmentScheduleInfo);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("appointmentSchedule_information");
+        modelAndView.addObject("appointmentScheduleInfo", appointmentScheduleInfo);
+        return modelAndView;
     }
 
     //save contact
@@ -107,6 +109,7 @@ public class HomeController {
             //Chua ton tai username
             TblAdmin admin = new TblAdmin();
             admin.setUsername(registerUser.getUsername());
+            admin.setEmail(registerUser.getEmail());
             String password = encoder.encode(registerUser.getPassword());
             admin.setPassword(password);
 

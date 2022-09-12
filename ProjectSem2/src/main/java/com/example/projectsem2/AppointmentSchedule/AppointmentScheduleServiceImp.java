@@ -1,5 +1,6 @@
 package com.example.projectsem2.AppointmentSchedule;
 
+import com.example.projectsem2.dto.AppointmentScheduleStatus;
 import com.example.projectsem2.dto.CountAppointmentSchedule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class AppointmentScheduleServiceImp implements AppointmentScheduleService
 
     @Override
     public List<AppointmentSchedule> getAllAppointmentSchedule() {
-        return appointmentScheduleRepository.findAllByOrderByIdAsc();
+        return appointmentScheduleRepository.findAllByOrderByOrderDateDesc();
     }
 
     @Override
@@ -52,5 +53,25 @@ public class AppointmentScheduleServiceImp implements AppointmentScheduleService
     @Override
     public List<CountAppointmentSchedule> countAppointmentSchedule() {
         return appointmentScheduleRepository.countAppointmentSchedule();
+    }
+
+    @Override
+    public List<AppointmentScheduleStatus> bookingConfirm() {
+        return appointmentScheduleRepository.bookingConfirm();
+    }
+
+    @Override
+    public List<AppointmentScheduleStatus> bookingNull() {
+        return appointmentScheduleRepository.bookingNull();
+    }
+
+    @Override
+    public List<AppointmentScheduleStatus> bookingDone() {
+        return appointmentScheduleRepository.bookingDone();
+    }
+
+    @Override
+    public List<AppointmentScheduleStatus> bookingCancel() {
+        return appointmentScheduleRepository.bookingCancel();
     }
 }

@@ -37,7 +37,7 @@
         </button>
         <div id="navbar-menu" aria-labelledby="navbar-toggle">
           <ul class="header__navbar-list">
-            <li class="header__navbar-item ">
+            <li class="header__navbar-item">
               <a th:href="@{/home}" class="header__navbar-item-link">Home</a>
             </li>
             <li class="header__navbar-item">
@@ -72,14 +72,14 @@
                 <p>
                   <a th:href="@{/home}" class="navbar__content-link">Home</a>
                   <span> &gt; </span>
-                  <span class="navbar__content-last">Thank you Contact</span>
+                  <span class="navbar__content-last">Thank you Booking</span>
                 </p>
               </nav>
             </div>
           </div>
         </div>
 
-        <div class="grid wide">
+        <div class="grid">
           <div class="row">
             <div class="col l-12 c-12 m-12">
               <h2 class="lined-heading">
@@ -90,16 +90,48 @@
         </div>
 
         <div class="grid">
+
           <div class="row">
-            <div class="col l-12 m-12 c-12">
-              <span class="thank-text">Thank you for contacting our clinic </span>
-              <span class="thank-text">Please wait for our response </span>
+            <div class="col l-3 m-2 c-12"></div>
+            <div class="col l-6 m-8 c-12">
+              <span class="thank-booking">Thank you for booking an appointment</span>
+              <table class="table-info">
+                <tr>
+                  <td><h2>Medical Examination Code: &nbsp; </h2></td>
+                  <td><h2 th:text="${appointmentScheduleInfo.id}"></h2></td>
+                </tr>
+                <tr>
+                  <td><h2>Full Name: </h2></td>
+                  <td><h2 th:text="${appointmentScheduleInfo.name}"></h2></td>
+                </tr>
+                <tr>
+                  <td><h2>Phone: </h2></td>
+                  <td><h2 th:text="${appointmentScheduleInfo.phone}"></h2></td>
+                </tr>
+                <tr>
+                  <td><h2>Booking Date: </h2></td>
+                  <td><h2 th:text="${appointmentScheduleInfo.orderDate}"></h2></td>
+                </tr>
+                <tr>
+                  <td><h2>Specialty Name: </h2></td>
+                  <td><h2 th:text="${appointmentScheduleInfo.specialtyId.name}"></h2></td>
+                </tr>
+                <tr>
+                  <td><h2>Time: </h2></td>
+                  <td><h2 th:text="${appointmentScheduleInfo.examinationTimeId.name}"></h2></td>
+                </tr>
+                <tr>
+                  <td><h2>Price: </h2></td>
+                  <td><h2 th:text="${appointmentScheduleInfo.examinationPriceId.name}"></h2></td>
+                </tr>
+              </table>
             </div>
+            <div class="col l-3 m-2 c-12"></div>
           </div>
         </div>
       </div>
     </div>
-
+    <br><br><br>
     <div class="call-to-action">
       <div class="grid wide">
         <div class="row">
@@ -125,12 +157,12 @@
           <h3 class="footer__heading">Clinic information</h3>
           <ul class="footer-list">
             <li class="footer-item">
-                                <span class="footer-item__text">
-                                    Address: 18 Nguyen Huu Tho street, <br> Hoang Liet, Hoang Mai, Ha Noi <br>
-                                    Hotline: 19001909 <br>
-                                    Phone: 024.38618257<br>
-                                    Email: ThaoDo@gmail.com
-                                </span>
+                 <span class="footer-item__text">
+                     Address: 18 Nguyen Huu Tho street, <br> Hoang Liet, Hoang Mai, Ha Noi <br>
+                     Hotline: 19001909 <br>
+                     Phone: 024.38618257<br>
+                     Email: ThaoDo@gmail.com
+                 </span>
             </li>
           </ul>
         </div>
@@ -140,11 +172,11 @@
           <h3 class="footer__heading">Time work</h3>
           <ul class="footer-list">
             <li class="footer-item">
-                                <span class="footer-item__text">
-                                        Working time: <br><br>
-                                        Morning: 7h - 12h <br><br>
-                                        Afternoon: 13h30 - 18h
-                                </span>
+               <span class="footer-item__text">
+                   Working time: <br><br>
+                   Morning: 7h - 12h <br><br>
+                   Afternoon: 13h30 - 18h
+               </span>
             </li>
           </ul>
         </div>

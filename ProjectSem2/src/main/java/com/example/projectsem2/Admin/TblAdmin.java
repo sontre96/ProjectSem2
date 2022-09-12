@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -36,6 +37,8 @@ public class TblAdmin {
     @Size(min = 6, message = "username should have at least 6 characters")
     private String username;
     @Column(name = "email")
+    @NotEmpty(message = "email is mandatory")
+    @Email
     private String email;
     @Column(name = "password")
     @NotEmpty(message = "password is mandatory")

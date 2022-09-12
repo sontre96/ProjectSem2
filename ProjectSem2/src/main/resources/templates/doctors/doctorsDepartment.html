@@ -22,25 +22,27 @@
             <hr>
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table table-bordered table-striped text-center" id="countAppointmentScheduleTable">
+                    <div>
+                        <a th:href="@{/doctors/countDoctor}" class="btn btn-primary">Back</a>
+                    </div>
+                    <br>
+                    <table class="table table-bordered table-striped text-center" id="doctorDepartmentTable">
                         <thead>
                         <tr>
                             <th>No</th>
+                            <th>Name</th>
+                            <th>Gender</th>
                             <th>Specialty Name</th>
-                            <th>OrderDate</th>
-                            <th>Time</th>
-                            <th>Number of Customer Booked</th>
-
+                            <th>Status</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="appointmentSchedule, i: ${countAppointmentSchedule}">
+                        <tr th:each="doctor, i: ${doctorsDepartment}">
                             <td th:text="${i.index+1}" />
-                            <td th:text="${appointmentSchedule.name}" />
-                            <td th:text="${appointmentSchedule.orderDate}" />
-                            <td th:text="${appointmentSchedule.time}" />
-                            <td th:text="${appointmentSchedule.numberOfRegisteredCustomers}" />
-
+                            <td th:text="${doctor.name}" />
+                            <td><span th:text="${doctor.gender}? 'Male' : 'Female' "></span></td>
+                            <td th:text="${doctor.nameSpecialty}" />
+                            <td><span th:text="${doctor.statusDoctor}? 'Active' : 'Absent' "></span></td>
                         </tr>
                         </tbody>
                     </table>
@@ -50,7 +52,7 @@
     </div>
     <script>
         $(document).ready(function() {
-            $("#countAppointmentScheduleTable").DataTable({
+            $("#doctorDepartmentTable").DataTable({
                 'aoColumnDefs': [{
                     'bSortable': false,
                     'aTargets': [-1] /* 1st one, start by the right */

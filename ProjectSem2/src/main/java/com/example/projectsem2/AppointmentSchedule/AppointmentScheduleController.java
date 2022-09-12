@@ -81,8 +81,36 @@ public class AppointmentScheduleController {
 
     //count appointmentSchedule
     @GetMapping("/appointmentSchedules/countAppointmentSchedule")
-    public String countDoctor(Model model){
+    public String countAppointmentSchedule(Model model){
         model.addAttribute("countAppointmentSchedule", appointmentScheduleService.countAppointmentSchedule());
         return "appointmentSchedules/countAppointmentSchedule";
+    }
+
+    //search status appointmentSchedule = confirm
+    @GetMapping("/appointmentSchedules/appointmentScheduleStatusConfirm")
+    public String appointmentScheduleStatusConfirm(Model model){
+        model.addAttribute("appointmentScheduleStatus", appointmentScheduleService.bookingConfirm());
+        return "appointmentSchedules/appointmentScheduleStatus";
+    }
+
+    //search status appointmentSchedule = null
+    @GetMapping("/appointmentSchedules/appointmentScheduleStatusNull")
+    public String appointmentScheduleStatusNull(Model model){
+        model.addAttribute("appointmentScheduleStatus", appointmentScheduleService.bookingNull());
+        return "appointmentSchedules/appointmentScheduleStatus";
+    }
+
+    //search status appointmentSchedule = cancel
+    @GetMapping("/appointmentSchedules/appointmentScheduleStatusCancel")
+    public String appointmentScheduleStatusCancel(Model model){
+        model.addAttribute("appointmentScheduleStatus", appointmentScheduleService.bookingCancel());
+        return "appointmentSchedules/appointmentScheduleStatus";
+    }
+
+    //search status appointmentSchedule = done
+    @GetMapping("/appointmentSchedules/appointmentScheduleStatusDone")
+    public String appointmentScheduleStatusDone(Model model){
+        model.addAttribute("appointmentScheduleStatus", appointmentScheduleService.bookingDone());
+        return "appointmentSchedules/appointmentScheduleStatus";
     }
 }

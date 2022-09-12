@@ -37,6 +37,15 @@ public class AdminController {
         return "admins/admins";
     }
 
+    //get by id
+//    @GetMapping("/admins/{id}")
+//    public String Admin(@PathVariable(value = "id") long id, Model model){
+//        TblAdmin admins = adminService.findAdminById(id);
+//        model.addAttribute("admins",admins);
+//        return "admins/{id}";
+//    }
+
+
     @GetMapping("/showAdminForm")
     // to form add
     public String showNewAdminForm(Model model) {
@@ -46,7 +55,7 @@ public class AdminController {
         return "admins/newAdmin";
     }
 
-    //save avatar doctor
+    //save avatar admin
     @PostMapping(path = "/saveAdmin")
     public String saveAdmin( TblAdmin admins, BindingResult result,
                               @RequestParam("avatar") MultipartFile myFile) {

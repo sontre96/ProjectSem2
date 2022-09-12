@@ -240,7 +240,7 @@
 
 .doctor__container-img {
     width: 100%;
-    height: 280px;
+    height: 230px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -276,14 +276,14 @@
     color: var(--white-color);
 }
 
-/* Chuyen khoa */
+/* specialty */
 .dept__container {
     display: flex;
 }
 
 .dept__container-img {
     width: 100%;
-    height: 250px;
+    height: 220px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -314,7 +314,6 @@
     font-size: 1.6rem;
     line-height: 24px;
     border-radius: 5px;
-    margin: 0px 0;
     color: var(--white-color);
 }
 
@@ -374,7 +373,6 @@
     font-size: 1.4rem;
     color: #c1c1c1;
     padding: 8px 0;
-    display: block;
     display: flex;
     align-items: center;
 }

@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appointment Schedule</title>
+    <title>Examination Day Management</title>
 </head>
 
 <body>
@@ -15,32 +15,30 @@
         <div class="grid">
             <div class="row">
                 <div class="col">
-                    <h2 class="text-center" style="margin-top: 70px;">Appointment Schedule List</h2>
+                    <h2 class="text-center" style="margin-top: 70px;">List Examination Day</h2>
                 </div>
-                <hr>
             </div>
             <hr>
             <div class="row">
+                <a th:href="@{/showNewExaminationDayForm}" class="btn btn-primary m-3">Add Examination Day</a>
                 <div class="col-sm-12">
-                    <table class="table table-bordered table-striped text-center" id="countAppointmentScheduleTable">
+                    <table class="table table-bordered table-striped text-center" id="examinationDayTable">
                         <thead>
                         <tr>
                             <th>No</th>
-                            <th>Specialty Name</th>
-                            <th>OrderDate</th>
-                            <th>Time</th>
-                            <th>Number of Customer Booked</th>
-
+                            <th>Date</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="appointmentSchedule, i: ${countAppointmentSchedule}">
+                        <tr th:each="examinationDay, i: ${examinationDays}">
                             <td th:text="${i.index+1}" />
-                            <td th:text="${appointmentSchedule.name}" />
-                            <td th:text="${appointmentSchedule.orderDate}" />
-                            <td th:text="${appointmentSchedule.time}" />
-                            <td th:text="${appointmentSchedule.numberOfRegisteredCustomers}" />
-
+                            <td th:text="${examinationDay.name}" />
+                            <td>
+                                <a th:href="@{/showFormUpdateExaminationDay/{id}(id=${examinationDay.id})}" class="btn btn-primary">Update</a>
+                                &nbsp;
+                                <a th:href="@{/deleteExaminationDay/{id}(id=${examinationDay.id})}" class="btn btn-danger ml-2">Delete</a>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -50,7 +48,7 @@
     </div>
     <script>
         $(document).ready(function() {
-            $("#countAppointmentScheduleTable").DataTable({
+            $("#examinationDayTable").DataTable({
                 'aoColumnDefs': [{
                     'bSortable': false,
                     'aTargets': [-1] /* 1st one, start by the right */
