@@ -13,7 +13,7 @@ public class ContactServiceImp implements ContactService{
 
     @Override
     public List<TblContact> getAllContact() {
-        return contactRepository.findAllByOrderByIdAsc();
+        return contactRepository.findAllByOrderByCreatedAtDesc();
     }
 
     @Override

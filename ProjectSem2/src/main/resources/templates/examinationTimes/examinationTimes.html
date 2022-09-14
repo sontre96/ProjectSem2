@@ -20,7 +20,7 @@
             </div>
             <hr>
             <div class="row">
-                <a th:href="@{/showNewExaminationDayForm}" class="btn btn-primary m-3">Add Examination Time</a>
+                <a th:href="@{/showNewExaminationTimeForm}" class="btn btn-primary m-3">Add Examination Time</a>
                 <div class="col-sm-12">
                     <table class="table table-bordered table-striped text-center" id="examinationTimeTable">
                         <thead>
@@ -37,7 +37,7 @@
                             <td>
                                 <a th:href="@{/showFormUpdateExaminationTime/{id}(id=${examinationTime.id})}" class="btn btn-primary">Update</a>
                                 &nbsp;
-                                <a th:href="@{/deleteExaminationTime/{id}(id=${examinationTime.id})}" class="btn btn-danger ml-2">Delete</a>
+                                <a th:href="@{/deleteExaminationTime/{id}(id=${examinationTime.id})}" class="btn btn-danger ml-2" onclick="return confirm('Do you really want to delete data?')">Delete</a>
                             </td>
                         </tr>
                         </tbody>

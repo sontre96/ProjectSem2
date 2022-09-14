@@ -11,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AppointmentScheduleStatus {
+    private Long id;
     private String name;
     private String phone;
     @DateTimeFormat(pattern = "dd-MM-yyyy")

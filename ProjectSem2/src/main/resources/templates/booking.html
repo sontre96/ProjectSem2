@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html
+<html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -139,7 +139,7 @@
                         </div>
                         <div class="col l-1 m-0 c-0"> </div>
                         <div class="col l-6 m-12 c-12">
-                            <form th:action="@{/saveAppointmentScheduleInfo}"    method="POST" class="form" id="booking-form" name="Form" onsubmit="return validateForm()">
+                            <form th:action="@{/saveAppointmentScheduleInfo}"  method="POST" class="form" id="booking-form" name="Form" onsubmit="return validateForm()">
                                 <h3 class="heading">Appointment Booking form</h3>
                                 <p class="desc">Let's join hands for good health ❤️</p>
                                 <div class="spacer"></div>
@@ -156,46 +156,50 @@
 
                                 <div class="form-group">
                                     <label for="orderDate" class="form-label">Enter a date for medical examination:</label>
-                                    <input id="orderDate" name="orderDate" type="text" placeholder="Enter you set your schedule" class="form-control">
+                                    <input id="orderDate" name="orderDate" type="text" placeholder="dd-MM-yyyy" class="form-control" >
                                     <div class="error" id="orderDateErr"></div>
                                 </div>
-                                <!--  value="examinationTimeId" / Khi thay đổi id trong bảng timeWorks thì nhớ thay đổi lại value-->
+                                <!--  value="examinationTimeId" / Khi thay đổi id trong bảng examinationTime thì nhớ thay đổi lại value tương ứng-->
+<!--                                When changing the id in the examinationTime table, remember to change the corresponding value-->
                                 <div class="form-group">
                                     <label for="examinationTimeId" class="form-label">Choose time booking schedule:</label>
-                                    <select id="examinationTimeId" name="examinationTimeId" class="form-control" >
+                                    <select id="examinationTimeId" name="examinationTimeId" class="form-control"  required >
                                         <option>Choose time booking schedule</option>
                                         <option text="8h:30 - 9h:30" value="1">8h:30 - 9h:30</option>
                                         <option text="9h:30 - 10h:30" value="2">9h:30 - 10h:30</option>
                                         <option text="10h:30 - 11h:30" value="3">10h:30 - 11h:30</option>
                                         <option text="13h:30 - 14h:30" value="4">13h:30 - 14h:30</option>
                                         <option text="14h:30 - 15h:30" value="5">14h:30 - 15h:30</option>
-                                        <option text="15h:30 - 16h:30" value="7">15h:30 - 16h:30</option>
+                                        <option text="15h:30 - 16h:30" value="6">15h:30 - 16h:30</option>
                                     </select>
                                     <div class="error" id="examinationTimeIdErr"></div>
                                 </div>
-                                <!--  value="specialtyId" / Khi thay đổi id trong bảng timeWorks thì nhớ thay đổi lại value-->
+                                <!--  value="specialtyId" / Khi thay đổi id trong bảng specialty thì nhớ thay đổi lại value tương ứng-->
+<!--                                When changing the id in the specialty table, remember to change the corresponding value-->
                                 <div class="form-group">
                                     <label for="specialtyId" class="form-label">Choose Specialty:</label>
                                     <select id="specialtyId" name="specialtyId" class="form-control">
                                         <option>Choose Specialty</option>
-                                        <option text="Orthopedic Department" value="1">Orthopedic Department</option>
-                                        <option text="Cardiology Department" value="3">Cardiology Department</option>
-                                        <option text="Pediatrics Department" value="5">Pediatrics Department</option>
-                                        <option text="Testing Center" value="6">Testing Center</option>
-                                        <option text="Department of central nervous system" value="7">Department of central nervous system</option>
-                                        <option text="Otorhinolaryngology" value="8">Otorhinolaryngology</option>
-                                        <option text="Respiratory Medicine" value="9">Respiratory Medicine</option>
-                                        <option text="Pharmacy Department" value="10">Pharmacy Department</option>
-                                        <option text="Medical Examination Department" value="11">Medical Examination Department</option>
-                                        <option text="Fertility Center" value="12">Fertility Center</option>
-                                        <option text="Vaccination Center" value="13">Vaccination Center</option>
+                                            <option text="Orthopedic Department" value="1">Orthopedic Department</option>
+                                            <option text="Cardiology Department" value="2">Cardiology Department</option>
+                                            <option text="Pediatrics Department" value="3">Pediatrics Department</option>
+                                            <option text="Testing Center" value="4">Testing Center</option>
+                                            <option text="Department of central nervous system" value="5">Department of central nervous system</option>
+                                            <option text="Otorhinolaryngology" value="6">Otorhinolaryngology</option>
+                                            <option text="Respiratory Medicine" value="7">Respiratory Medicine</option>
+                                            <option text="Pharmacy Department" value="8">Pharmacy Department</option>
+                                            <option text="Medical Examination Department" value="9">Medical Examination Department</option>
+                                            <option text="Fertility Center" value="10">Fertility Center</option>
+                                            <option text="Vaccination Center" value="11">Vaccination Center</option>
+                                        </th:block>
                                     </select>
                                     <div class="error" id="specialtyIdErr"></div>
                                 </div>
-                                <!--  value="examinationPriceId" / Khi thay đổi id trong bảng timeWorks thì nhớ thay đổi lại value-->
+                                <!--  value="examinationPriceId" / Khi thay đổi id trong bảng examinationPrice thì nhớ thay đổi lại value tương ứng-->
+                                <!--  When changing the id in the examinationPrice table, remember to change the corresponding value-->
                                 <div class="form-group">
                                     <label for="examinationPriceId" class="form-label">Choose examination service:</label>
-                                    <select id="examinationPriceId" name="examinationPriceId" class="form-control" >
+                                    <select id="examinationPriceId" name="examinationPriceId" class="form-control">
                                         <option>Choose examination service</option>
                                         <option text="Basic: 25$" value="1">Basic: 25$</option>
                                         <option text="Standard: 40$" value="2">Standard: 40$</option>

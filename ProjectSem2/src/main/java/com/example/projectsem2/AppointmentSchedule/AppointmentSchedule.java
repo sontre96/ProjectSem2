@@ -10,6 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
@@ -32,6 +33,7 @@ public class AppointmentSchedule {
     @Column(name = "order_date")
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
+    @NotNull(message = "order Date is mandatory")
     private Date orderDate;
     @Column(name = "order_status")
     private String orderStatus;
@@ -56,19 +58,19 @@ public class AppointmentSchedule {
     @Column(name = "examination_price_id", insertable = false, updatable = false)
     private Long PriceId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "specialty_id", insertable = true, updatable = true)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     private TblSpecialty specialtyId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "examination_time_id", insertable = true, updatable = true)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     private ExaminationTime examinationTimeId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "examination_price_id", insertable = true, updatable = true)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude

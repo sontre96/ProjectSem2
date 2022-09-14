@@ -8,6 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -36,11 +37,13 @@ public class ExaminationSchedule {
     @JoinColumn(name = "specialty_id", insertable = true, updatable = true)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
+    @NotNull(message = "can't delete")
     private TblSpecialty specialtyId;
 
     @ManyToOne
     @JoinColumn(name = "examination_day_id", insertable = true, updatable = true)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
+    @NotNull(message = "can't delete")
     private ExaminationDay examinationDayId;
 }

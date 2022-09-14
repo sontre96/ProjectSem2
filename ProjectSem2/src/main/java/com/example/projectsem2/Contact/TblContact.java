@@ -35,6 +35,8 @@ public class TblContact {
     @Column(name = "note")
     @NotEmpty(message = "note is mandatory")
     private String note;
+    @Column(name = "contact_status")
+    private boolean status;
     @Basic
     @Column(name = "created_at", updatable = false)
     @CreationTimestamp

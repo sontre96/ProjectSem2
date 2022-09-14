@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label>Time:</label>
                             <select th:field="*{examinationTimeId}" class="form-control" required>
-                                <th:block th:each="examinationTime : ${ListExaminationTimes}">
+                                <th:block th:each="examinationTime : ${listExaminationTimes}">
                                     <option th:text="${examinationTime.name}" th:value="${examinationTime.id}" ></option>
                                 </th:block>
                             </select>

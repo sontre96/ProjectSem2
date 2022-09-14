@@ -9,7 +9,7 @@ body {
 }
 h2 {
     text-align: center;
-    color: #ef6e58;
+    color: #2961d9;
 }
 form {
     width: 300px;
@@ -60,16 +60,16 @@ input[type=text]{
 input[type="submit"] {
     font-size: 110%;
     font-weight: 100;
-    background: #ef6e58;
-    border-color: #ef6e58;
-    box-shadow: 0 3px 0 #bd432e;
+    background: #2961d9;
+    border-color: #2961d9;
+    box-shadow: 0 3px 0 #2961d9;
     color: #fff;
     margin-top: 10px;
     cursor: pointer;
 }
 input[type="submit"]:hover {
-    background: #bd432e;
-    border-color: #bd432e;
+    background: #2961d9;
+    border-color: #2961d9;
 }
 
 .input-1{

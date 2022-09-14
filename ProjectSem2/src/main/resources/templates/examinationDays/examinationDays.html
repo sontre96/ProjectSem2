@@ -37,7 +37,7 @@
                             <td>
                                 <a th:href="@{/showFormUpdateExaminationDay/{id}(id=${examinationDay.id})}" class="btn btn-primary">Update</a>
                                 &nbsp;
-                                <a th:href="@{/deleteExaminationDay/{id}(id=${examinationDay.id})}" class="btn btn-danger ml-2">Delete</a>
+                                <a th:href="@{/deleteExaminationDay/{id}(id=${examinationDay.id})}" class="btn btn-danger ml-2" onclick="return confirm('Do you really want to delete data?')">Delete</a>
                             </td>
                         </tr>
                         </tbody>

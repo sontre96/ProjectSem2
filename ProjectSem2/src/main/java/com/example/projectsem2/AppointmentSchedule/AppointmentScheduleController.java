@@ -44,7 +44,7 @@ public class AppointmentScheduleController {
 
         model.addAttribute("appointmentSchedules", new AppointmentSchedule());
         model.addAttribute("listSpecialties", listSpecialties);
-        model.addAttribute("ListExaminationTimes",ListExaminationTimes);
+        model.addAttribute("listExaminationTimes",ListExaminationTimes);
         model.addAttribute("listExaminationPrices",listExaminationPrices);
         return "appointmentSchedules/newAppointmentSchedule";
     }
@@ -89,22 +89,22 @@ public class AppointmentScheduleController {
     //search status appointmentSchedule = confirm
     @GetMapping("/appointmentSchedules/appointmentScheduleStatusConfirm")
     public String appointmentScheduleStatusConfirm(Model model){
-        model.addAttribute("appointmentScheduleStatus", appointmentScheduleService.bookingConfirm());
-        return "appointmentSchedules/appointmentScheduleStatus";
+        model.addAttribute("appointmentScheduleStatusConfirm", appointmentScheduleService.bookingConfirm());
+        return "appointmentSchedules/appointmentScheduleStatusConfirm";
     }
 
     //search status appointmentSchedule = null
     @GetMapping("/appointmentSchedules/appointmentScheduleStatusNull")
     public String appointmentScheduleStatusNull(Model model){
-        model.addAttribute("appointmentScheduleStatus", appointmentScheduleService.bookingNull());
-        return "appointmentSchedules/appointmentScheduleStatus";
+        model.addAttribute("appointmentScheduleStatusConfirm", appointmentScheduleService.bookingNull());
+        return "appointmentSchedules/appointmentScheduleStatusConfirm";
     }
 
     //search status appointmentSchedule = cancel
     @GetMapping("/appointmentSchedules/appointmentScheduleStatusCancel")
     public String appointmentScheduleStatusCancel(Model model){
-        model.addAttribute("appointmentScheduleStatus", appointmentScheduleService.bookingCancel());
-        return "appointmentSchedules/appointmentScheduleStatus";
+        model.addAttribute("appointmentScheduleStatusCancel", appointmentScheduleService.bookingCancel());
+        return "appointmentSchedules/appointmentScheduleStatusCancel";
     }
 
     //search status appointmentSchedule = done

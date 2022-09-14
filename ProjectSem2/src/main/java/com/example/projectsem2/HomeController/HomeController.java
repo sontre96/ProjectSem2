@@ -7,24 +7,32 @@ import com.example.projectsem2.AppointmentSchedule.AppointmentScheduleService;
 import com.example.projectsem2.Common.Constants;
 import com.example.projectsem2.Contact.ContactService;
 import com.example.projectsem2.Contact.TblContact;
+import com.example.projectsem2.ExaminationPrice.ExaminationPrice;
+import com.example.projectsem2.ExaminationPrice.ExaminationPriceService;
+import com.example.projectsem2.ExaminationTime.ExaminationTime;
+import com.example.projectsem2.ExaminationTime.ExaminationTimeService;
 import com.example.projectsem2.Role.Role;
 import com.example.projectsem2.Role.RoleService;
+import com.example.projectsem2.Specialty.SpecialtyService;
+import com.example.projectsem2.Specialty.TblSpecialty;
 import com.example.projectsem2.payload.RegisterUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Controller
 public class HomeController {
     @Autowired
     AppointmentScheduleService appointmentScheduleService;
-
+    
     @Autowired
     ContactService contactService;
 
@@ -36,6 +44,13 @@ public class HomeController {
 
     @Autowired
     PasswordEncoder encoder;
+
+    @Autowired
+    SpecialtyService specialtyService;
+    @Autowired
+    ExaminationTimeService examinationTimeService;
+    @Autowired
+    ExaminationPriceService examinationPriceService;
 
 
     @GetMapping(value={"/", "/index", "/home"})
@@ -54,7 +69,7 @@ public class HomeController {
     }
 
     @GetMapping(value = "/home/booking")
-    public String viewBookingPage() {
+    public String viewBookingPage(Model model) {
         return "booking";
     }
 

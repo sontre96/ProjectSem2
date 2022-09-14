@@ -30,6 +30,7 @@
                             <th>Phone</th>
                             <th>Email</th>
                             <th>Note</th>
+                            <th>Status</th>
                             <th>Create_at</th>
                             <th>Actions</th>
                         </tr>
@@ -41,11 +42,12 @@
                             <td th:text="${contact.phone}" />
                             <td th:text="${contact.email}" />
                             <td th:text="${contact.note}" />
+                            <td><span th:text="${contact.status}? 'confirm' : 'unConfirm' "></span></td>
                             <td th:text="${contact.createdAt}" />
                             <td>
                                 <a th:href="@{/showFormUpdateContact/{id}(id=${contact.id})}" class="btn btn-primary">Update</a>
                                 &nbsp;
-                                <a th:href="@{/deleteContact/{id}(id=${contact.id})}" class="btn btn-danger ml-2">Delete</a>
+                                <a th:href="@{/deleteContact/{id}(id=${contact.id})}" class="btn btn-danger ml-2" onclick="return confirm('Do you really want to delete data?')">Delete</a>
                             </td>
                         </tr>
                         </tbody>

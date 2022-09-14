@@ -29,7 +29,7 @@
                     <table class="table table-bordered table-striped text-center" id="appointmentScheduleStatusTable">
                         <thead>
                         <tr>
-                            <th>No</th>
+                            <th>Code</th>
                             <th>Name</th>
                             <th>Phone</th>
                             <th>OrderDate</th>
@@ -41,7 +41,7 @@
                         </thead>
                         <tbody>
                         <tr th:each="status, i: ${appointmentScheduleStatus}">
-                            <td th:text="${i.index+1}" />
+                            <td th:text="${status.id}" />
                             <td th:text="${status.name}" />
                             <td th:text="${status.phone}" />
                             <td th:text="${status.orderDate}" />

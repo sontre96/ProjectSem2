@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface ContactRepository extends JpaRepository<TblContact, Long> {
-    public List<TblContact> findAllByOrderByIdAsc();
+    public List<TblContact> findAllByOrderByCreatedAtDesc();
 }

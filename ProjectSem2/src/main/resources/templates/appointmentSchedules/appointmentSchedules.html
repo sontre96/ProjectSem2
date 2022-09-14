@@ -31,7 +31,7 @@
                     <table class="table table-bordered table-striped text-center" id="appointmentScheduleTable">
                         <thead>
                         <tr>
-                            <th>No</th>
+                            <th>Code</th>
                             <th>Name</th>
                             <th>Phone</th>
                             <th>OrderDate</th>
@@ -39,12 +39,11 @@
                             <th>Time</th>
                             <th>Price</th>
                             <th>Status</th>
-                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr th:each="appointmentSchedule, i: ${appointmentSchedules}">
-                            <td th:text="${i.index+1}" />
+                            <td th:text="${appointmentSchedule.id}" />
                             <td th:text="${appointmentSchedule.name}" />
                             <td th:text="${appointmentSchedule.phone}" />
                             <td th:text="${appointmentSchedule.orderDate}" />
@@ -52,10 +51,7 @@
                             <td th:text="${appointmentSchedule.examinationTimeId.name}" />
                             <td th:text="${appointmentSchedule.examinationPriceId.name}" />
                             <td th:text="${appointmentSchedule.orderStatus}" />
-                            <td>
-                                <a th:href="@{/showFormUpdateAppointmentSchedule/{id}(id=${appointmentSchedule.id})}" class="btn btn-primary">Update</a>
-                                <a th:href="@{/deleteAppointmentSchedule/{id}(id=${appointmentSchedule.id})}" class="btn btn-danger ml-2">Delete</a>
-                            </td>
+
                         </tr>
                         </tbody>
                     </table>
