@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layoutadmin}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors of Specialty</title>
+</head>
+
+<body>
+<div class="content" layout:fragment="content">
+  <div class="container">
+    <div class="grid">
+      <div class="row">
+        <div class="col">
+          <h2 class="text-center" style="margin-top: 70px;">Doctors of Specialty</h2>
+          <hr>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div>
+            <a th:href="@{/doctors/doctorsCardiology}" class="btn btn-info">Cardiology Department</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/doctors/doctorsPediatricsDepartment}" class="btn btn-info">Pediatrics Department</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/doctors/doctorsOtorhinolaryngology}" class="btn btn-info">Otorhinolaryngology</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/doctors/doctorsCentralNervousSystem}" class="btn btn-info">Department of central nervous system</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <br>
+          <div>
+            <a th:href="@{/doctors/doctorsOrthopedicDepartment}" class="btn btn-info">Orthopedic Department</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <a th:href="@{/doctors/doctorsPharmacyDepartment}" class="btn btn-info">Pharmacy Department</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/doctors/doctorsRespiratoryMedicine}" class="btn btn-info">Respiratory Medicine</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/doctors/doctorsMedicalExaminationDepartment}" class="btn btn-info">Medical Examination Department</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <br>
+          <div>
+            <a th:href="@{/doctors/doctorsVaccinationCenter}" class="btn btn-info">Vaccination Center</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/doctors/doctorsFertilityCenter}" class="btn btn-info" style="margin-left: 35px">Fertility Center</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/doctors/doctorsTestingCenter}" class="btn btn-info" style="margin-left: 50px">Testing Center</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/doctors/doctorsTrainingAndResearchCenter}" class="btn btn-info" style="margin-left: 45px">Training And Research Center</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <br>
+          <table class="table table-bordered table-striped text-center" id="countDoctorTable">
+            <thead>
+            <tr>
+              <th>No</th>
+              <th>Specialty Name</th>
+              <th>Number Of Doctors</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="doctor, i: ${countDoctor}">
+              <td th:text="${i.index+1}" />
+              <td th:text="${doctor.nameSpecialty}" />
+              <td th:text="${doctor.numberOfDoctors}" />
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $("#countDoctorTable").DataTable({
+        'aoColumnDefs': [{
+          'bSortable': false,
+          'aTargets': [-1] /* 1st one, start by the right */
+        }]
+      });
+    })
+  </script>
+  </div>
+  </body>
+  </html>

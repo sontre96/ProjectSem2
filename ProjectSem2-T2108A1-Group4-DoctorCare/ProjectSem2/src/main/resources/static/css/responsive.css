@@ -1,0 +1,120 @@
+/* PC */
+@media screen and (min-width: 64em) {
+    #navbar-toggle,
+    #navbar-toggle[aria-expanded="true"] {
+        display: none;
+    }
+
+    #navbar-menu,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu {
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        display: block;
+        height: 100%;
+    }
+
+    .header__navbar-list,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu .header__navbar-list {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        position: static;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    }
+
+    .mt-heading{
+        display: none;
+    }
+}
+
+/* Tablet & mobile */
+@media screen and (max-width: 63.9375em) {
+    .mt-heading {
+        margin: 16px 0;
+    }
+    .mt-heading-text {
+        line-height: 48px;
+        text-align: center;
+        color: var(--primary-color);
+    }
+    .header__navbar {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        align-items: center;
+    }
+
+    .header__navbar-img {
+        display: flex;
+        width: 140px;
+        height: 80px;
+    }
+
+    .slide{
+        display: none;
+    }
+
+    .header__navbar-line {
+        display: none;
+    }    
+
+    /* navbar content */
+    .navbar__content {
+        padding-left: 14px;
+    }
+    
+}
+
+/* Tablet */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+    .header__navbar-item-link {
+        font-size: 3.2rem;
+    }
+
+    .icon-bar {
+        display: block;
+        width: 40px;
+        height: 6px;
+        margin: 2px;
+        background-color: var(--white-color);
+    }
+
+    #navbar-toggle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .mt-heading-text {
+        font-size: 4.8em;    
+    }
+
+    
+}
+
+/* mobile */
+@media screen and (max-width: 39.9375em) {
+
+    .mt-heading-text {
+        font-size: 3.2em;    
+    }
+
+    .footer__heading {
+       padding-left: 24px;
+    }
+
+    .footer-list {
+       padding-left: 24px;
+    }
+
+    .footer-span__text {
+        padding-left: 24px;
+    }
+    
+    .footer_btn {
+        padding: 0 24px;
+    }
+}

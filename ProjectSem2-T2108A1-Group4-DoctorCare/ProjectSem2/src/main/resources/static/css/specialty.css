@@ -1,0 +1,49 @@
+
+.navbar__content {
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 40px;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.navbar__content-link {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.navbar__content-last {
+    color: var(--primary-color);
+}
+
+.lined-heading {
+    margin: 0 0 40px 0;
+}
+
+.specialty-depart {
+    margin: 16px 0;
+}
+
+.specialty-icon {
+    background-color: #f9e5e5;
+    margin: auto;
+    width: 154px;
+    height: 154px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    overflow: hidden;
+
+}
+.specialty-img {
+    padding: 18px;
+    max-width: 100%;
+    height: auto;
+}
+
+.specialty-text {
+    display: block;
+    padding: 16px 8px;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+}

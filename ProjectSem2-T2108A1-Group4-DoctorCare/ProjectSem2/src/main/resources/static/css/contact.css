@@ -1,0 +1,140 @@
+
+.navbar__content {
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 40px;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.navbar__content-link {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.navbar__content-last {
+    color: var(--primary-color);
+}
+
+.lined-heading {
+  margin: 0 0 40px 0;
+}
+
+/*form  */
+.form {
+    min-height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;
+    border-radius: 2px;
+    margin: 24px;
+    align-self: center;
+    margin-top: -30px;
+  }
+  .form .heading {
+    font-size: 2rem;
+  }
+  .form .desc {
+    text-align: center;
+    color: #636d77;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    line-height: 2.4rem;
+    margin-top: 16px;
+    font-weight: 300;
+  }
+  
+  .form-group {
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    text-align: left;
+    font-weight: 700;
+    padding-bottom: 6px;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+  }
+  
+  .form-control {
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1.4rem;
+  }
+  
+  .form-control:hover {
+    border-color: #1dbfaf;
+  }
+  
+  .form-submit {
+    position: relative;
+    left: 40%;
+    outline: none;
+    background-color: #1dbfaf;
+    margin-top: 12px;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    width: 100px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .form-submit:hover {
+    background-color: #1ac7b6;
+  }
+  
+  .spacer {
+    margin-top: 36px;
+  }
+
+.error {
+    color: red;
+    font-size: 18px;
+    margin-top: 10px;
+    display: flex;
+
+}
+
+.input-1{
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border:1px solid #01cc40;
+}
+.input-2{
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border:1px solid red;
+}
+
+
+/* contact address */
+.contact__address {
+    width: 100%;
+    height: 320px;
+    border: 1px solid #ddd;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.contact__address-text {
+    margin-top: 10px;
+    color: var(--black-color);
+    font-size: 18px;
+    line-height: 18px;
+    padding: 8px 0;
+}
+
+#googleMap {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}

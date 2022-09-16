@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<div class="center">
+  <h1>Login</h1>
+
+
+  <div th:if="${#request.getParameter('error') == 'true'}"
+       style="color:red;margin:10px 0px;">
+    Login Failed!!!<br />
+    Reason :
+    <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+          th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+                Static summary
+         </span>
+
+  </div>
+  <form name="f" th:action="@{/j_spring_security_check}" method="post">
+    <div class="txt_field">
+      <input type="text" name="username" id="username">
+      <span></span>
+      <label for="username">username</label>
+    </div>
+    <div class="txt_field">
+      <input type="password" name="password" id="password">
+      <span></span>
+      <label for="password">password</label>
+    </div>
+    <!--    <div class="checkbox">-->
+    <!--      <input type="checkbox" name="remember-me" id="remember-me" required>-->
+    <!--      <span></span>-->
+    <!--      <label for="remember-me">Remember-me?</label>-->
+    <!--    </div>-->
+
+    <input type="submit" name="submit" value="Login">
+    <div class="signup_link">
+      Not a user <a th:href="@{/register}">Register</a>
+    </div>
+  </form>
+</div>
+</body>
+</html>
